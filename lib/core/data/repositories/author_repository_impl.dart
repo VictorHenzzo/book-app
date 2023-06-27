@@ -50,12 +50,10 @@ class AuthorRepositoryImpl implements AuthorRepository {
   List<AuthorEntity> _convertResponseToAuthor(final Map<String, dynamic> map) {
     final rawAuthors = map['favoriteAuthors'] as List<dynamic>;
 
-    return rawAuthors
-        .map(
-          (final author) => AuthorModel.fromMap(
-            author,
-          ).toEntity(),
-        )
-        .toList(growable: false);
+    return rawAuthors.map(
+      (final author) {
+        return AuthorModel.fromMap(author).toEntity();
+      },
+    ).toList(growable: false);
   }
 }
