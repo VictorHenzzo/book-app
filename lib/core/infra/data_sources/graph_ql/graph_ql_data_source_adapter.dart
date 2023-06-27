@@ -29,7 +29,7 @@ class GraphQLDataSourceAdapter implements GraphQLDataSource {
     }
 
     return Response(
-      body: response.data,
+      body: response.data ?? {},
     );
   }
 }

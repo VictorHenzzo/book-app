@@ -10,5 +10,5 @@ class Response {
     required this.body,
   });
 
-  final Map<String, dynamic>? body;
+  final Map<String, dynamic> body;
 }

@@ -16,7 +16,10 @@ void main() {
     repository = _FethUserRepositoryMock();
     sut = FetchUserImageUseCaseImpl(repository);
 
-    appError = const AppError();
+    appError = AppError(
+      stackTrace: StackTrace.empty,
+      exception: Exception(),
+    );
     imageUrl = 'image-url';
   });
 
