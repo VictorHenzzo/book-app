@@ -10,9 +10,9 @@ class BookModel extends BookProperties {
 
   factory BookModel.fromMap(Map<String, dynamic> map) {
     return BookModel(
-      imageUrl: map['imageUrl'] as String,
+      imageUrl: map['cover'] as String,
       name: map['name'] as String,
-      author: map['author'] as String,
+      author: map['author']['name'] as String,
       id: map['id'] as String,
     );
   }
