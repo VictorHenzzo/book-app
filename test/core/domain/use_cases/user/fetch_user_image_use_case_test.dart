@@ -7,13 +7,13 @@ import 'package:result_dart/result_dart.dart';
 
 void main() {
   late FetchUserImageUseCaseImpl sut;
-  late _FethUserRepositoryMock repository;
+  late _UserRepositoryMock repository;
 
   late AppError appError;
   late String imageUrl;
 
   setUp(() {
-    repository = _FethUserRepositoryMock();
+    repository = _UserRepositoryMock();
     sut = FetchUserImageUseCaseImpl(repository);
 
     appError = AppError(
@@ -71,4 +71,4 @@ void main() {
   });
 }
 
-class _FethUserRepositoryMock extends Mock implements UserRepository {}
+class _UserRepositoryMock extends Mock implements UserRepository {}
