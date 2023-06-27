@@ -6,8 +6,10 @@ import 'package:book_app/core/domain/use_cases/books/fetch_favorite_books_use_ca
 import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:graphql/client.dart';
+import 'package:injectable/injectable.dart';
 import 'package:result_dart/result_dart.dart';
 
+@injectable
 class BookRepositoryImpl implements BookRepository {
   BookRepositoryImpl({required this.dataSource});
 
