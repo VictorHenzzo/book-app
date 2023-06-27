@@ -3,6 +3,7 @@ import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source_a
 import 'package:injectable/injectable.dart';
 import 'package:graphql/client.dart';
 
+//TODO Find better way to set baseUrl
 @module
 abstract class GraphQlDataSourceBindings {
   GraphQLClient get client => GraphQLClient(
