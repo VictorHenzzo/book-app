@@ -10,7 +10,7 @@ abstract class UserModule {
   ) =>
       impl;
 
-  UserRepository getUserImageRepository(
+  UserRepository getUserRepository(
     final UserRepositoryImpl repository,
   ) =>
       repository;

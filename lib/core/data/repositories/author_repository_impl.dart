@@ -6,7 +6,9 @@ import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.d
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:graphql/client.dart';
 import 'package:result_dart/result_dart.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class AuthorRepositoryImpl implements AuthorRepository {
   AuthorRepositoryImpl({required this.dataSource});
 
