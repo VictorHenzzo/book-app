@@ -1,8 +1,7 @@
-import 'package:graphql_flutter/graphql_flutter.dart';
-
 abstract class GraphQLDataSource {
   Future<Response> query({
-    required final QueryOptions queryOptions,
+    required final String queryArguments,
+    final Map<String, dynamic>? variables,
   });
 }
 
@@ -11,5 +10,5 @@ class Response {
     required this.body,
   });
 
-  final Map<String, dynamic> body;
+  final Map<String, dynamic>? body;
 }

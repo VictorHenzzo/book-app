@@ -1,5 +1,5 @@
 import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart';
-import 'package:graphql_flutter/graphql_flutter.dart' hide Response;
+import 'package:graphql/client.dart' hide Response;
 
 class GraphQLDataSourceAdapter implements GraphQLDataSource {
   GraphQLDataSourceAdapter({
@@ -10,18 +10,26 @@ class GraphQLDataSourceAdapter implements GraphQLDataSource {
 
   @override
   Future<Response> query({
-    required final QueryOptions queryOptions,
+    required final String queryArguments,
+    final Map<String, dynamic>? variables,
   }) async {
+    final queryOptions = QueryOptions(
+      document: gql(queryArguments),
+      variables: variables ?? {},
+    );
+
     final response = await client.query(
       queryOptions,
     );
 
-    if (response.exception != null) {
-      throw response.exception!;
+    final exception = response.exception;
+
+    if (exception != null) {
+      throw exception;
     }
 
     return Response(
-      body: response.data ?? {},
+      body: response.data,
     );
   }
 }

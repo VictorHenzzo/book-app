@@ -14,7 +14,7 @@ import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.d
 import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source_bindings.dart'
     as _i5;
 import 'package:get_it/get_it.dart' as _i1;
-import 'package:graphql_flutter/graphql_flutter.dart' as _i3;
+import 'package:graphql/client.dart' as _i3;
 import 'package:injectable/injectable.dart' as _i2;
 
 extension GetItInjectableX on _i1.GetIt {
