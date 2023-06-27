@@ -1,4 +1,4 @@
-import 'package:book_app/core/data/repositories/user_repository.dart';
+import 'package:book_app/core/data/repositories/user_repository_impl.dart';
 import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -8,13 +8,13 @@ import 'package:mocktail/mocktail.dart';
 import '../../../mocks.dart';
 
 void main() {
-  late UserRepository sut;
+  late UserRepositoryImpl sut;
   late GraphQLDataSourceMock dataSource;
   late String queryArguments;
 
   setUp(() {
     dataSource = GraphQLDataSourceMock();
-    sut = UserRepository(dataSource: dataSource);
+    sut = UserRepositoryImpl(dataSource: dataSource);
 
     queryArguments = ''' 
         query FetchUserPicture{

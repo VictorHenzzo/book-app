@@ -1,4 +1,4 @@
-import 'package:book_app/core/domain/repositories/fetch_user_image_repository.dart';
+import 'package:book_app/core/domain/repositories/user_repository.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:injectable/injectable.dart';
 import 'package:result_dart/result_dart.dart';
@@ -11,7 +11,7 @@ abstract class FetchUserImageUseCase {
 class FetchUserImageUseCaseImpl implements FetchUserImageUseCase {
   FetchUserImageUseCaseImpl(this.repository);
 
-  final FetchUserImageRepository repository;
+  final UserRepository repository;
 
   @override
   Future<Result<String, AppError>> fetchUserImage() {

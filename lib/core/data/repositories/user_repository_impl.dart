@@ -1,4 +1,4 @@
-import 'package:book_app/core/domain/repositories/fetch_user_image_repository.dart';
+import 'package:book_app/core/domain/repositories/user_repository.dart';
 import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:graphql/client.dart';
@@ -6,8 +6,8 @@ import 'package:result_dart/result_dart.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class UserRepository implements FetchUserImageRepository {
-  UserRepository({required this.dataSource});
+class UserRepositoryImpl implements UserRepository {
+  UserRepositoryImpl({required this.dataSource});
 
   final GraphQLDataSource dataSource;
 

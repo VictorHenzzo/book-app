@@ -9,10 +9,10 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:book_app/core/data/repositories/user_repository.dart' as _i5;
-import 'package:book_app/core/domain/repositories/fetch_user_image_repository.dart'
-    as _i6;
-import 'package:book_app/core/domain/use_cases/fetch_user_image_use_case.dart'
+import 'package:book_app/core/data/repositories/user_repository_impl.dart'
+    as _i5;
+import 'package:book_app/core/domain/repositories/user_repository.dart' as _i6;
+import 'package:book_app/core/domain/use_cases/user/fetch_user_image_use_case.dart'
     as _i7;
 import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart'
     as _i4;
@@ -40,12 +40,12 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i3.GraphQLClient>(() => graphQlDataSourceBindings.client);
     gh.factory<_i4.GraphQLDataSource>(
         () => graphQlDataSourceBindings.dataSource());
-    gh.factory<_i5.UserRepository>(
-        () => _i5.UserRepository(dataSource: gh<_i4.GraphQLDataSource>()));
-    gh.factory<_i6.FetchUserImageRepository>(
-        () => userModule.getUserImageRepository(gh<_i5.UserRepository>()));
-    gh.factory<_i7.FetchUserImageUseCaseImpl>(() =>
-        _i7.FetchUserImageUseCaseImpl(gh<_i6.FetchUserImageRepository>()));
+    gh.factory<_i5.UserRepositoryImpl>(
+        () => _i5.UserRepositoryImpl(dataSource: gh<_i4.GraphQLDataSource>()));
+    gh.factory<_i6.UserRepository>(
+        () => userModule.getUserImageRepository(gh<_i5.UserRepositoryImpl>()));
+    gh.factory<_i7.FetchUserImageUseCaseImpl>(
+        () => _i7.FetchUserImageUseCaseImpl(gh<_i6.UserRepository>()));
     gh.factory<_i7.FetchUserImageUseCase>(() => userModule
         .getFetchUserImageUseCase(gh<_i7.FetchUserImageUseCaseImpl>()));
     return this;
