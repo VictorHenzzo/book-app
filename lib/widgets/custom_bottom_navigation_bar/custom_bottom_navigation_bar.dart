@@ -10,8 +10,15 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
     return BottomNavigationBar(
       items: items(),
+      type: BottomNavigationBarType.fixed,
       selectedItemColor: activeColor,
       unselectedItemColor: color,
+      selectedLabelStyle: const TextStyle(
+        fontFamily: "Heebo",
+      ),
+      unselectedLabelStyle: const TextStyle(
+        fontFamily: "Heebo",
+      ),
     );
   }
 
