@@ -11,7 +11,7 @@ class AuthorModel extends AuthorProperties {
   factory AuthorModel.fromMap(Map<String, dynamic> map) {
     return AuthorModel(
       name: map['name'] as String,
-      imageUrl: map['imageUrl'] as String,
+      imageUrl: map['picture'] as String,
       booksCount: map['booksCount'] as int,
       id: map['id'] as String,
     );
