@@ -34,9 +34,7 @@ void main() {
       ).thenAnswer(
         (final _) async => Response(
           body: {
-            "data": {
-              "userPicture": "https://sscdn.co/gcs/studiosol/2022/mobile/avatar.jpg",
-            }
+            "userPicture": "https://sscdn.co/gcs/studiosol/2022/mobile/avatar.jpg",
           },
         ),
       );

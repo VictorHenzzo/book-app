@@ -1,4 +1,4 @@
-import 'package:book_app/core/domain/repositories/user_image_repository.dart';
+import 'package:book_app/core/domain/repositories/fetch_user_image_repository.dart';
 import 'package:book_app/core/domain/use_cases/fetch_user_image_use_case.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -71,4 +71,4 @@ void main() {
   });
 }
 
-class _FethUserRepositoryMock extends Mock implements UserImageRepository {}
+class _FethUserRepositoryMock extends Mock implements FetchUserImageRepository {}
