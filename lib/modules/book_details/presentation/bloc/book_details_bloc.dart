@@ -14,6 +14,7 @@ class BookDetailsBloc extends Bloc<BookDetailsEvent, BookDetailsState>
     on<FetchContentEvent>(_onFetchContentEvent);
   }
 
+  //TODO Add tests
   Future<void> _onFetchContentEvent(
     final FetchContentEvent event,
     final Emitter<BookDetailsState> emit,
