@@ -1,8 +1,11 @@
 import 'package:book_app/modules/home/presentation/bloc/home_bloc.dart';
 import 'package:book_app/modules/home/presentation/home_presenter.dart';
-import 'package:book_app/modules/home/ui/widgets/components/app_bar/home_screen_appbar.dart';
 import 'package:book_app/widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+
+part 'components/app_bar/home_screen_appbar.dart';
+part 'components/tabs/borrowed_books_tab.dart';
+part 'components/tabs/my_books_tab.dart';
 
 class HomeScreenLoadedStateWidget extends StatelessWidget {
   const HomeScreenLoadedStateWidget({
@@ -21,6 +24,12 @@ class HomeScreenLoadedStateWidget extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: HomeScreenAppBar(
           userImageUrl: state.userImageUrl,
+        ),
+        body: TabBarView(
+          children: [
+            _MyBooksTab(),
+            _BorrowedBooksTab(),
+          ],
         ),
         bottomNavigationBar: const CustomBottomNavigationBar(),
       ),

@@ -10,32 +10,28 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({
     required this.presenter,
   }) : super(key: const Key('homeScreen')) {
-    // _fetchDependencies();
+    _fetchDependencies();
   }
 
   final HomePresenter presenter;
 
   @override
   Widget build(final BuildContext context) {
-    return HomeScreenErrorStateWidget(
-      tryAgain: _fetchDependencies,
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (final context, final state) {
+        return switch (state) {
+          final HomeInitialState _ => const HomeScreenLoadingStateWidget(),
+          final HomeLoadingState _ => const HomeScreenLoadingStateWidget(),
+          final HomeErrorState _ => HomeScreenErrorStateWidget(
+              tryAgain: _fetchDependencies,
+            ),
+          final HomeLoadedState loadedState => HomeScreenLoadedStateWidget(
+              state: loadedState,
+              presenter: presenter,
+            ),
+        };
+      },
     );
-
-    // return BlocBuilder<HomeBloc, HomeState>(
-    //   builder: (final context, final state) {
-    //     return switch (state) {
-    //       final HomeInitialState _ => const HomeScreenLoadingStateWidget(),
-    //       final HomeLoadingState _ => const HomeScreenLoadingStateWidget(),
-    //       final HomeErrorState _ => HomeScreenErrorStateWidget(
-    //           tryAgain: _fetchDependencies,
-    //         ),
-    //       final HomeLoadedState loadedState => HomeScreenLoadedStateWidget(
-    //           state: loadedState,
-    //           presenter: presenter,
-    //         ),
-    //     };
-    //   },
-    // );
   }
 
   void _fetchDependencies() {

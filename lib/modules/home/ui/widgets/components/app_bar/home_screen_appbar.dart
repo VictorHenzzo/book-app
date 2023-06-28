@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../../home_screen_loaded_state_widget.dart';
 
 class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeScreenAppBar({
@@ -73,6 +73,7 @@ class _AppBarTitle extends StatelessWidget {
         SizedBox(
           height: 40,
           child: CircleAvatar(
+            //TODO It's breaking on lookup
             backgroundImage: NetworkImage(
               userImageUrl,
             ),
