@@ -27,7 +27,7 @@ class BookBannerWidget extends StatelessWidget {
               height: heigth * 0.7,
             ),
           ),
-          const Spacer(),
+          const SizedBox(height: 5),
           Text(
             book.name,
             overflow: TextOverflow.ellipsis,
