@@ -16,7 +16,7 @@ class AppTheme {
           error: Color(0XFFF44035),
           errorContainer: Color(0xFFFFDCDA),
           onError: Color(0XFFFFFFFF),
-          shadow: Color(0XFFF7F7F7),
+          shadow: Color(0XFFE0E0E0),
           brightness: Brightness.light,
         ),
         textTheme: const TextTheme(

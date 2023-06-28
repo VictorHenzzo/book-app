@@ -2,23 +2,26 @@ import 'package:book_app/core/domain/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 
 class BookBannerWidget extends StatelessWidget {
-  const BookBannerWidget(
-      {required this.book, required this.onPressed, required this.width, required this.heigth})
-      : super(key: const Key('bookBannerWidget'));
+  const BookBannerWidget({
+    required this.book,
+    required this.onPressed,
+    required this.heigth,
+    super.key,
+  });
 
   final BookEntity book;
   final Function(BookEntity) onPressed;
-  final double width;
   final double heigth;
 
   @override
   Widget build(final BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final screenSize = MediaQuery.of(context).size;
 
     return GestureDetector(
       onTap: () => onPressed(book),
       child: SizedBox(
-        width: width,
+        width: screenSize.width * 0.4,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

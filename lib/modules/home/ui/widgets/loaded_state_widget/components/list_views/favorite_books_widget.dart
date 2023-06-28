@@ -22,11 +22,13 @@ class _FavoriteBooksWidget extends StatelessWidget {
           return const SizedBox(width: 10);
         },
         itemBuilder: (final context, final index) {
+          final book = favoriteBooks[index];
+
           return BookBannerWidget(
-            book: favoriteBooks[index],
+            book: book,
             onPressed: _onPressed,
             heigth: screenSize.height * 0.35,
-            width: screenSize.width * 0.4,
+            key: Key('bookBannerWidget ${book.id}'),
           );
         },
       ),

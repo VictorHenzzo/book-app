@@ -11,23 +11,29 @@ class _MyBooksTab extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    return Column(
-      children: [
-        const _SectionTitle(
-          sectionTitle: 'Livros favoritos',
-        ),
-        _FavoriteBooksWidget(
-          presenter: presenter,
-          favoriteBooks: state.favoriteBooks,
-        ),
-        const _SectionTitle(
-          sectionTitle: 'Autores favoritos',
-        ),
-        const _SectionTitle(
-          sectionTitle: 'Biblioteca',
-          showNavigationButton: false,
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const _SectionTitle(
+            sectionTitle: 'Livros favoritos',
+          ),
+          _FavoriteBooksWidget(
+            presenter: presenter,
+            favoriteBooks: state.favoriteBooks,
+          ),
+          const _SectionTitle(
+            sectionTitle: 'Autores favoritos',
+          ),
+          _FavoriteAuthorsWidget(
+            favoriteAuthors: state.favoriteAuthors,
+            presenter: presenter,
+          ),
+          const _SectionTitle(
+            sectionTitle: 'Biblioteca',
+            showNavigationButton: false,
+          ),
+        ],
+      ),
     );
   }
 }
