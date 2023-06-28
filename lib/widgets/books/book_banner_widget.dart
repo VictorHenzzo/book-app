@@ -15,34 +15,37 @@ class BookBannerWidget extends StatelessWidget {
   Widget build(final BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    return SizedBox(
-      width: width,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: Image.network(
-              book.imageUrl,
-              height: heigth * 0.7,
+    return GestureDetector(
+      onTap: () => onPressed(book),
+      child: SizedBox(
+        width: width,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.network(
+                book.imageUrl,
+                height: heigth * 0.7,
+              ),
             ),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            book.name,
-            overflow: TextOverflow.ellipsis,
-            style: textTheme.labelLarge,
-            maxLines: 2,
-            textAlign: TextAlign.start,
-          ),
-          Text(
-            book.author,
-            overflow: TextOverflow.ellipsis,
-            style: textTheme.bodySmall,
-            maxLines: 1,
-            textAlign: TextAlign.start,
-          )
-        ],
+            const SizedBox(height: 5),
+            Text(
+              book.name,
+              overflow: TextOverflow.ellipsis,
+              style: textTheme.labelLarge,
+              maxLines: 2,
+              textAlign: TextAlign.start,
+            ),
+            Text(
+              book.author,
+              overflow: TextOverflow.ellipsis,
+              style: textTheme.bodySmall,
+              maxLines: 1,
+              textAlign: TextAlign.start,
+            ),
+          ],
+        ),
       ),
     );
   }
