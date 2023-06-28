@@ -1,8 +1,8 @@
 import 'package:book_app/modules/home/presentation/bloc/home_bloc.dart';
 import 'package:book_app/modules/home/presentation/home_presenter.dart';
-import 'package:book_app/modules/home/ui/widgets/home_screen_error_state_widget.dart';
-import 'package:book_app/modules/home/ui/widgets/home_screen_loaded_state_widget.dart';
-import 'package:book_app/modules/home/ui/widgets/home_screen_loading_state_widget.dart';
+import 'package:book_app/modules/home/ui/widgets/error_state_widget/home_screen_error_state_widget.dart';
+import 'package:book_app/modules/home/ui/widgets/loaded_state_widget/home_screen_loaded_state_widget.dart';
+import 'package:book_app/modules/home/ui/widgets/loading_state_widget/home_screen_loading_state_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

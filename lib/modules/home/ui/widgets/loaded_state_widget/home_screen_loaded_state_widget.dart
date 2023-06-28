@@ -27,8 +27,11 @@ class HomeScreenLoadedStateWidget extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            _MyBooksTab(),
-            _BorrowedBooksTab(),
+            _MyBooksTab(
+              presenter: presenter,
+              state: state,
+            ),
+            const _BorrowedBooksTab(),
           ],
         ),
         bottomNavigationBar: const CustomBottomNavigationBar(),
