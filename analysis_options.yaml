@@ -2,7 +2,7 @@ include: package:flutter_lints/flutter.yaml
 
 analyzer:
   exclude: 
-    - '**/*.config.dart'
+    - 'lib/core/infra/service_locator/service_locator.config.dart'
 
 linter:
   rules:
