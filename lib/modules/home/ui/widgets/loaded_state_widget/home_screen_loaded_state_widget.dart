@@ -15,6 +15,7 @@ part 'components/texts/section_title.dart';
 part 'components/list_views/favorite_books_widget.dart';
 part 'components/list_views/favorite_authors_widget.dart';
 part 'components/list_views/all_books_widget.dart';
+part 'components/chips/book_type_chip_widget.dart';
 
 class HomeScreenLoadedStateWidget extends StatelessWidget {
   const HomeScreenLoadedStateWidget({

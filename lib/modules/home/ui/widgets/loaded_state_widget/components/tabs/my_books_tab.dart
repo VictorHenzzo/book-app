@@ -45,6 +45,8 @@ class _MyBooksTab extends StatelessWidget {
                   showNavigationButton: false,
                 ),
                 const SizedBox(height: 25),
+                const _BookTypeChipWidget(),
+                const SizedBox(height: 25),
                 _AllBooksWidget(
                   allBooks: state.allBooks,
                   presenter: presenter,
