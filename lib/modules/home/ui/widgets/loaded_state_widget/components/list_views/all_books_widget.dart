@@ -28,15 +28,23 @@ class _AllBooksWidget extends StatelessWidget {
 
         return BookListTileWidget(
           book: book,
-          onPressed: _onPressed,
+          onPressed: (final book) => _onPressed(
+            book,
+            context,
+          ),
         );
       },
     );
   }
 
-  void _onPressed(final BookEntity book) {
-    presenter.addEvent(
-      GoToBookPageEvent(book: book),
+  void _onPressed(
+    final BookEntity book,
+    final BuildContext context,
+  ) {
+    Navigator.pushNamed(
+      context,
+      BookDetailsRoute.path,
+      arguments: book,
     );
   }
 }

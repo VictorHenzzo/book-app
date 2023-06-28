@@ -29,18 +29,26 @@ class _FavoriteBooksWidget extends StatelessWidget {
 
           return BookBannerWidget(
             book: book,
-            onPressed: _onPressed,
             heigth: screenSize.height * 0.35,
             key: Key('bookBannerWidget ${book.id}'),
+            onPressed: (final book) => _onPressed(
+              book,
+              context,
+            ),
           );
         },
       ),
     );
   }
 
-  void _onPressed(final BookEntity book) {
-    presenter.addEvent(
-      GoToBookPageEvent(book: book),
+  void _onPressed(
+    final BookEntity book,
+    final BuildContext context,
+  ) {
+    Navigator.pushNamed(
+      context,
+      BookDetailsRoute.path,
+      arguments: book,
     );
   }
 }

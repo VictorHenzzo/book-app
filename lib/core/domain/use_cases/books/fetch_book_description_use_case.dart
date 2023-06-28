@@ -11,6 +11,7 @@ abstract class FetchBookDescriptionUseCase {
   );
 }
 
+//TODO Ajustar para conter o isFavorite
 @injectable
 class FetchBookDescriptionUseCaseImpl implements FetchBookDescriptionUseCase {
   FetchBookDescriptionUseCaseImpl(this.bookRepository);
