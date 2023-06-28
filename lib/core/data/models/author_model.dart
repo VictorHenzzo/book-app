@@ -8,7 +8,7 @@ class AuthorModel extends AuthorProperties {
     required super.id,
   });
 
-  factory AuthorModel.fromMap(Map<String, dynamic> map) {
+  factory AuthorModel.fromMap(final Map<String, dynamic> map) {
     return AuthorModel(
       name: map['name'] as String,
       imageUrl: map['picture'] as String,

@@ -5,8 +5,8 @@ import 'package:book_app/core/domain/use_cases/authors/fetch_favorite_authors_us
 import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:graphql/client.dart';
-import 'package:result_dart/result_dart.dart';
 import 'package:injectable/injectable.dart';
+import 'package:result_dart/result_dart.dart';
 
 @injectable
 class AuthorRepositoryImpl implements AuthorRepository {
@@ -17,7 +17,7 @@ class AuthorRepositoryImpl implements AuthorRepository {
   @override
   FetchFavoriteAuthorsResult fetchFavoriteAuthors() async {
     try {
-      const queryArguments = ''' 
+      const queryArguments = '''
         query FetchFavotireAuthors{
           favoriteAuthors{
             id,

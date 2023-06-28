@@ -18,7 +18,7 @@ class BookRepositoryImpl implements BookRepository {
   @override
   FetchAllBooksResult fetchAllBooks() async {
     try {
-      const queryArguments = ''' 
+      const queryArguments = '''
         query FetchAllBooks{
           allBooks{
             name,
@@ -53,7 +53,7 @@ class BookRepositoryImpl implements BookRepository {
   @override
   FetchFavoriteBooksResult fetchFavoriteBooks() async {
     try {
-      const queryArguments = ''' 
+      const queryArguments = '''
         query FetchFavoriteBooks{
           favoriteBooks{
             name,

@@ -41,7 +41,7 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  final Size preferredSize = const Size.fromHeight(120);
+  Size get preferredSize => const Size.fromHeight(120);
 }
 
 class _AppBarTitle extends StatelessWidget {
@@ -52,7 +52,7 @@ class _AppBarTitle extends StatelessWidget {
   final String userImageUrl;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

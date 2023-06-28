@@ -4,7 +4,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final selectedItemColor = Theme.of(context).colorScheme.primary;
     final unselectedItemColor = Theme.of(context).colorScheme.onSurface;
 
@@ -14,10 +14,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
       selectedItemColor: selectedItemColor,
       unselectedItemColor: unselectedItemColor,
       selectedLabelStyle: const TextStyle(
-        fontFamily: "Heebo",
+        fontFamily: 'Heebo',
       ),
       unselectedLabelStyle: const TextStyle(
-        fontFamily: "Heebo",
+        fontFamily: 'Heebo',
       ),
     );
   }

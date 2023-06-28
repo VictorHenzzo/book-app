@@ -17,7 +17,7 @@ void main() {
     dataSource = GraphQLDataSourceMock();
     sut = AuthorRepositoryImpl(dataSource: dataSource);
 
-    queryArguments = ''' 
+    queryArguments = '''
         query FetchFavotireAuthors{
           favoriteAuthors{
             id,
@@ -40,24 +40,24 @@ void main() {
       ).thenAnswer(
         (final _) async => Response(
           body: {
-            "favoriteAuthors": [
+            'favoriteAuthors': [
               {
-                "name": "Robert Cecil Martin",
-                "id": "1",
-                "booksCount": 4,
-                "picture": "https://sscdn.co/gcs/studiosol/2022/mobile/author/uncle-bob.jpg"
+                'name': 'Robert Cecil Martin',
+                'id': '1',
+                'booksCount': 4,
+                'picture': 'https://sscdn.co/gcs/studiosol/2022/mobile/author/uncle-bob.jpg'
               },
               {
-                "name": "J. R. R. Tolkien",
-                "id": "4",
-                "booksCount": 4,
-                "picture": "https://sscdn.co/gcs/studiosol/2022/mobile/author/j-r-r-tolkien.jpg"
+                'name': 'J. R. R. Tolkien',
+                'id': '4',
+                'booksCount': 4,
+                'picture': 'https://sscdn.co/gcs/studiosol/2022/mobile/author/j-r-r-tolkien.jpg'
               },
               {
-                "name": "Afonso Padilha",
-                "id": "5",
-                "booksCount": 1,
-                "picture": "https://sscdn.co/gcs/studiosol/2022/mobile/author/afonso-padilha.jpg"
+                'name': 'Afonso Padilha',
+                'id': '5',
+                'booksCount': 1,
+                'picture': 'https://sscdn.co/gcs/studiosol/2022/mobile/author/afonso-padilha.jpg'
               }
             ]
           },

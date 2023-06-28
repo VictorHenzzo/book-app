@@ -16,7 +16,7 @@ void main() {
     dataSource = GraphQLDataSourceMock();
     sut = UserRepositoryImpl(dataSource: dataSource);
 
-    queryArguments = ''' 
+    queryArguments = '''
         query FetchUserPicture{
           userPicture
         }
@@ -34,7 +34,7 @@ void main() {
       ).thenAnswer(
         (final _) async => Response(
           body: {
-            "userPicture": "https://sscdn.co/gcs/studiosol/2022/mobile/avatar.jpg",
+            'userPicture': 'https://sscdn.co/gcs/studiosol/2022/mobile/avatar.jpg',
           },
         ),
       );

@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   final HomePresenter presenter;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(

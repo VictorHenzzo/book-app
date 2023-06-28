@@ -21,7 +21,8 @@ void main() {
   group('FetchAllBooks', () {
     group('Success', () {
       setUp(() {
-        queryArguments = ''' 
+        queryArguments =
+            '''
         query FetchAllBooks{
           allBooks{
             name,
@@ -41,25 +42,25 @@ void main() {
         ).thenAnswer(
           (final _) async => Response(
             body: {
-              "allBooks": [
+              'allBooks': [
                 {
-                  "name": "Clean Code: A Handbook of Agile Software Craftsmanship",
-                  "id": "1",
-                  "cover": "https://sscdn.co/gcs/studiosol/2022/mobile/book/clean-code.jpg",
-                  "author": {"name": "Robert Cecil Martin"}
+                  'name': 'Clean Code: A Handbook of Agile Software Craftsmanship',
+                  'id': '1',
+                  'cover': 'https://sscdn.co/gcs/studiosol/2022/mobile/book/clean-code.jpg',
+                  'author': {'name': 'Robert Cecil Martin'}
                 },
                 {
-                  "name":
+                  'name':
                       "Clean Architecture: A Craftsman's Guide to Software Structure and Design",
-                  "id": "2",
-                  "cover": "https://sscdn.co/gcs/studiosol/2022/mobile/book/clean-architecture.jpg",
-                  "author": {"name": "Robert Cecil Martin"}
+                  'id': '2',
+                  'cover': 'https://sscdn.co/gcs/studiosol/2022/mobile/book/clean-architecture.jpg',
+                  'author': {'name': 'Robert Cecil Martin'}
                 },
                 {
-                  "name": "The Clean Coder: A Code of Conduct for Professional Programmers",
-                  "id": "3",
-                  "cover": "https://sscdn.co/gcs/studiosol/2022/mobile/book/the-clean-coder.jpg",
-                  "author": {"name": "Robert Cecil Martin"}
+                  'name': 'The Clean Coder: A Code of Conduct for Professional Programmers',
+                  'id': '3',
+                  'cover': 'https://sscdn.co/gcs/studiosol/2022/mobile/book/the-clean-coder.jpg',
+                  'author': {'name': 'Robert Cecil Martin'}
                 },
               ],
             },
@@ -115,7 +116,8 @@ void main() {
   group('FetchFavoriteBooks', () {
     group('Success', () {
       setUp(() {
-        queryArguments = ''' 
+        queryArguments =
+            '''
         query FetchFavoriteBooks{
           favoriteBooks{
             name,
@@ -135,18 +137,18 @@ void main() {
         ).thenAnswer(
           (final _) async => Response(
             body: {
-              "favoriteBooks": [
+              'favoriteBooks': [
                 {
-                  "name": "Clean Code: A Handbook of Agile Software Craftsmanship",
-                  "id": "1",
-                  "cover": "https://sscdn.co/gcs/studiosol/2022/mobile/book/clean-code.jpg",
-                  "author": {"name": "Robert Cecil Martin"}
+                  'name': 'Clean Code: A Handbook of Agile Software Craftsmanship',
+                  'id': '1',
+                  'cover': 'https://sscdn.co/gcs/studiosol/2022/mobile/book/clean-code.jpg',
+                  'author': {'name': 'Robert Cecil Martin'}
                 },
                 {
-                  "name": "The Clean Coder: A Code of Conduct for Professional Programmers",
-                  "id": "3",
-                  "cover": "https://sscdn.co/gcs/studiosol/2022/mobile/book/the-clean-coder.jpg",
-                  "author": {"name": "Robert Cecil Martin"}
+                  'name': 'The Clean Coder: A Code of Conduct for Professional Programmers',
+                  'id': '3',
+                  'cover': 'https://sscdn.co/gcs/studiosol/2022/mobile/book/the-clean-coder.jpg',
+                  'author': {'name': 'Robert Cecil Martin'}
                 },
               ],
             },

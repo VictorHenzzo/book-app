@@ -8,7 +8,7 @@ class BookModel extends BookProperties {
     required super.id,
   });
 
-  factory BookModel.fromMap(Map<String, dynamic> map) {
+  factory BookModel.fromMap(final Map<String, dynamic> map) {
     return BookModel(
       imageUrl: map['cover'] as String,
       name: map['name'] as String,

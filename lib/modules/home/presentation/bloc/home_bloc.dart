@@ -20,10 +20,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> implements HomePresenter {
     on<FetchDependenciesEvent>(_onFetchDependenciesEvent);
   }
 
-  //TODO Testar
+  //TODO Add tests
   Future<void> _onFetchDependenciesEvent(
-    FetchDependenciesEvent event,
-    Emitter<HomeState> emit,
+    final FetchDependenciesEvent event,
+    final Emitter<HomeState> emit,
   ) async {
     emit(const HomeLoadingState());
 

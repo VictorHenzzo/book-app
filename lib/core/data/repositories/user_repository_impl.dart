@@ -2,8 +2,8 @@ import 'package:book_app/core/domain/repositories/user_repository.dart';
 import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:graphql/client.dart';
-import 'package:result_dart/result_dart.dart';
 import 'package:injectable/injectable.dart';
+import 'package:result_dart/result_dart.dart';
 
 @injectable
 class UserRepositoryImpl implements UserRepository {
@@ -14,7 +14,7 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<Result<String, AppError>> fetchUserImage() async {
     try {
-      const queryArguments = ''' 
+      const queryArguments = '''
         query FetchUserPicture{
           userPicture
         }

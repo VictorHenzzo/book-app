@@ -11,7 +11,7 @@ void main() async {
       debugShowCheckedModeBanner: false,
       initialRoute: HomeRoute.path,
       routes: {
-        '/': (context) => HomeRoute.of(),
+        '/': (final context) => HomeRoute.of(),
       },
       theme: AppTheme().themeData,
     ),
