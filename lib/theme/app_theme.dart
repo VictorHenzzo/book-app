@@ -67,9 +67,9 @@ class AppTheme {
           ),
           titleLarge: TextStyle(
             fontFamily: 'Heebo',
-            fontWeight: FontWeight.normal,
+            fontWeight: FontWeight.w600,
             fontStyle: FontStyle.normal,
-            fontSize: 14,
+            fontSize: 20,
             letterSpacing: 0.12,
             height: 1.5,
             color: Color(0XFF555555),

@@ -19,3 +19,5 @@ void main() async {
 }
 
 //TODO Add readme information
+//TODO Add key on widgets
+//TODO Fix widgets sufix
