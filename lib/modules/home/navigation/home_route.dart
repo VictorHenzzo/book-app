@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeRoute {
-  static String path = '/';
-
-  static Widget of() {
+  static Widget of(final BuildContext context) {
     final presenter = HomeBloc(
       fetchUserImageUseCase: ServiceLocator.provide(),
       fetchAllBooksUseCase: ServiceLocator.provide(),
