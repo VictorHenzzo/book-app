@@ -32,6 +32,10 @@ class _MyBooksTab extends StatelessWidget {
             sectionTitle: 'Biblioteca',
             showNavigationButton: false,
           ),
+          _AllBooksWidget(
+            allBooks: state.allBooks,
+            presenter: presenter,
+          ),
         ],
       ),
     );

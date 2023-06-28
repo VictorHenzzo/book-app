@@ -18,6 +18,8 @@ class BookBannerWidget extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final screenSize = MediaQuery.of(context).size;
 
+    // TODO Make all width equal
+
     return GestureDetector(
       onTap: () => onPressed(book),
       child: SizedBox(
