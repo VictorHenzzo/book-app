@@ -95,8 +95,35 @@ class BookRepositoryImpl implements BookRepository {
   }
 
   @override
-  FetchBookDescriptionResult fetchBookDescription(String bookId) {
-    // TODO: implement fetchBookDescription
-    throw UnimplementedError();
+  FetchBookDescriptionResult fetchBookDescription(
+    final String bookId,
+  ) async {
+    try {
+      const queryArguments = r'''
+        query GetUser(\$id: ID!) {
+          book(id: \$id) {
+            description
+          }
+        }
+      ''';
+
+      final response = await dataSource.query(
+        queryArguments: queryArguments,
+        variables: {
+          'id': bookId,
+        },
+      );
+
+      return Result.success(
+        response.body['book']['description'],
+      );
+    } on OperationException catch (exception, stackTrace) {
+      return Result.failure(
+        AppError(
+          stackTrace: stackTrace,
+          exception: exception,
+        ),
+      );
+    }
   }
 }
