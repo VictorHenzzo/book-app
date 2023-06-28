@@ -10,10 +10,10 @@ void main() async {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: HomeRoute.path,
       routes: const {
-        '/': HomeRoute.of,
-        '/book-details': BookDetailsRoute.of,
+        HomeRoute.path: HomeRoute.of,
+        BookDetailsRoute.path: BookDetailsRoute.of,
       },
       theme: AppTheme().themeData,
     ),

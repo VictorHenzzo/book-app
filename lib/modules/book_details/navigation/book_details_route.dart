@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BookDetailsRoute {
-  static String path = '/book-details';
+  static const String path = '/book-details';
 
   static Widget of(final BuildContext context) {
     final presenter = BookDetailsBloc(
