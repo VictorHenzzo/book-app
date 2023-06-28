@@ -1,22 +1,22 @@
 part of 'home_bloc.dart';
 
-abstract class HomeState {
+sealed class HomeState {
   const HomeState();
 }
 
-class HomeInitialState extends HomeState {
+final class HomeInitialState extends HomeState {
   const HomeInitialState();
 }
 
-class HomeLoadingState extends HomeState {
+final class HomeLoadingState extends HomeState {
   const HomeLoadingState();
 }
 
-class HomeErrorState extends HomeState {
+final class HomeErrorState extends HomeState {
   const HomeErrorState();
 }
 
-class HomeLoadedState extends HomeState {
+final class HomeLoadedState extends HomeState {
   const HomeLoadedState({
     required this.userImageUrl,
     required this.favoriteBooks,

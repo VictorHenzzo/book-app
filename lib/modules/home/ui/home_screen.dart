@@ -17,6 +17,36 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: const CustomBottomNavigationBar(),
+      appBar: AppBar(
+        title: RichText(
+          text: TextSpan(
+            text: 'SS',
+            style: Theme.of(context).textTheme.displayMedium,
+            children: <TextSpan>[
+              TextSpan(
+                text: 'BOOK',
+                style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          SizedBox(
+            height: 100,
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: CircleAvatar(
+                backgroundColor: Theme.of(context).colorScheme.surface,
+                backgroundImage: const NetworkImage(
+                  'https://sscdn.co/gcs/studiosol/2022/mobile/avatar.jpg',
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

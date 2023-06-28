@@ -5,14 +5,14 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final activeColor = Theme.of(context).colorScheme.primary;
-    final color = Theme.of(context).colorScheme.onSurface;
+    final selectedItemColor = Theme.of(context).colorScheme.primary;
+    final unselectedItemColor = Theme.of(context).colorScheme.onSurface;
 
     return BottomNavigationBar(
       items: items(),
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: activeColor,
-      unselectedItemColor: color,
+      selectedItemColor: selectedItemColor,
+      unselectedItemColor: unselectedItemColor,
       selectedLabelStyle: const TextStyle(
         fontFamily: "Heebo",
       ),
