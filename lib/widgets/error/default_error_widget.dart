@@ -45,7 +45,7 @@ class DefaultErrorWidget extends StatelessWidget {
           ),
           const Spacer(),
           Text(
-            'Desculpe, não foi possível carregar o conteúdo neste momento.\nPor favor, verifique sua conexão com a internet e tente novamente.',
+            'Desculpe, não foi possível carregar o conteúdo neste momento.',
             style: textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),

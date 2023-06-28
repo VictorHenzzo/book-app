@@ -1,8 +1,14 @@
 import 'package:book_app/core/domain/entities/book_entity.dart';
+import 'package:book_app/modules/book_details/presentation/bloc/book_details_bloc.dart';
 import 'package:book_app/modules/book_details/presentation/book_details_presenter.dart';
+import 'package:book_app/widgets/error/default_error_widget.dart';
+import 'package:book_app/widgets/loadings/primary_loading.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'components/app_bar/book_details_app_bar.dart';
+part 'components/book_contents_widget.dart';
+part 'components/book_description/book_description_widget.dart';
 part 'components/header/book_header.dart';
 
 class BookDetailsScreen extends StatelessWidget {
@@ -56,48 +62,13 @@ class _BookDetailsScreenBody extends StatelessWidget {
           top: screenSize.height * 0.4,
           child: SizedBox(
             width: screenSize.width,
-            child: BookContents(
+            child: _BookContentsWidget(
               book: book,
               presenter: presenter,
             ),
           ),
         ),
       ],
-    );
-  }
-}
-
-class BookContents extends StatelessWidget {
-  const BookContents({
-    required this.presenter,
-    required this.book,
-    super.key,
-  });
-
-  final BookDetailsPresenter presenter;
-  final BookEntity book;
-
-  @override
-  Widget build(final BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 15,
-        vertical: 30,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(35),
-        ),
-        color: Theme.of(context).colorScheme.surface,
-      ),
-      child: Column(
-        children: [
-          _BookHeader(book: book),
-          SingleChildScrollView(
-            child: Text('dsa'),
-          )
-        ],
-      ),
     );
   }
 }

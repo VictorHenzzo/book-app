@@ -100,8 +100,8 @@ class BookRepositoryImpl implements BookRepository {
   ) async {
     try {
       const queryArguments = r'''
-        query GetUser(\$id: ID!) {
-          book(id: \$id) {
+        query FetchBookDescription($id: ID!) {
+          book(id: $id) {
             description
           }
         }

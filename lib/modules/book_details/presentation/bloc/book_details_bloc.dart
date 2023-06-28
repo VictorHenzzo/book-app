@@ -18,7 +18,18 @@ class BookDetailsBloc extends Bloc<BookDetailsEvent, BookDetailsState>
     final FetchContentEvent event,
     final Emitter<BookDetailsState> emit,
   ) async {
-    // TODO: implement event handler
+    emit(const BookDetailsLoadingState());
+
+    final descriptionEither = await fetchBookDescriptionUseCase.fetchBookDescription(
+      event.bookEntity.id,
+    );
+
+    descriptionEither.fold(
+      (final success) => emit(
+        BookDetailsLoadedState(bookDetails: success),
+      ),
+      (final failure) => emit(const BookDetailsErrorState()),
+    );
   }
 
   final FetchBookDescriptionUseCase fetchBookDescriptionUseCase;
