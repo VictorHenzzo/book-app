@@ -17,6 +17,9 @@ class _AllBooksWidget extends StatelessWidget {
       //TODO Find better way to do this
       physics: const NeverScrollableScrollPhysics(),
       itemCount: allBooks.length,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
       separatorBuilder: (final context, final index) {
         return const SizedBox(height: 10);
       },

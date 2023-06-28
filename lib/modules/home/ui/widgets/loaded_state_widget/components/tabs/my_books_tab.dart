@@ -14,6 +14,7 @@ class _MyBooksTab extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
+          const SizedBox(height: 25),
           const _SectionTitle(
             sectionTitle: 'Livros favoritos',
           ),
@@ -21,20 +22,35 @@ class _MyBooksTab extends StatelessWidget {
             presenter: presenter,
             favoriteBooks: state.favoriteBooks,
           ),
-          const _SectionTitle(
-            sectionTitle: 'Autores favoritos',
-          ),
-          _FavoriteAuthorsWidget(
-            favoriteAuthors: state.favoriteAuthors,
-            presenter: presenter,
-          ),
-          const _SectionTitle(
-            sectionTitle: 'Biblioteca',
-            showNavigationButton: false,
-          ),
-          _AllBooksWidget(
-            allBooks: state.allBooks,
-            presenter: presenter,
+          DecoratedBox(
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(35),
+              ),
+              color: Theme.of(context).colorScheme.surface,
+            ),
+            child: Column(
+              children: [
+                const SizedBox(height: 25),
+                const _SectionTitle(
+                  sectionTitle: 'Autores favoritos',
+                ),
+                _FavoriteAuthorsWidget(
+                  favoriteAuthors: state.favoriteAuthors,
+                  presenter: presenter,
+                ),
+                const SizedBox(height: 25),
+                const _SectionTitle(
+                  sectionTitle: 'Biblioteca',
+                  showNavigationButton: false,
+                ),
+                const SizedBox(height: 25),
+                _AllBooksWidget(
+                  allBooks: state.allBooks,
+                  presenter: presenter,
+                ),
+              ],
+            ),
           ),
         ],
       ),

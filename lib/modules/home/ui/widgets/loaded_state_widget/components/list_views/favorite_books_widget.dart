@@ -17,6 +17,9 @@ class _FavoriteBooksWidget extends StatelessWidget {
       height: screenSize.height * 0.35,
       child: ListView.separated(
         itemCount: favoriteBooks.length,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 15,
+        ),
         scrollDirection: Axis.horizontal,
         separatorBuilder: (final context, final index) {
           return const SizedBox(width: 10);

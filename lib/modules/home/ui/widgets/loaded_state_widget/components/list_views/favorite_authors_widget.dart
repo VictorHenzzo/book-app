@@ -18,6 +18,9 @@ class _FavoriteAuthorsWidget extends StatelessWidget {
       child: ListView.separated(
         itemCount: favoriteAuthors.length,
         scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 15,
+        ),
         separatorBuilder: (final context, final index) {
           return const SizedBox(width: 10);
         },

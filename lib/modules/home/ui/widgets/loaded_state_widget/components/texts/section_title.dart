@@ -11,19 +11,24 @@ class _SectionTitle extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          sectionTitle,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        if (showNavigationButton)
-          TextButton(
-            onPressed: () {},
-            child: const Text('ver todos'),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            sectionTitle,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
-      ],
+          if (showNavigationButton)
+            TextButton(
+              onPressed: () {},
+              child: const Text('ver todos'),
+            ),
+        ],
+      ),
     );
   }
 }

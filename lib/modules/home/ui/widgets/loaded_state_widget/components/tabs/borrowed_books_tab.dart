@@ -8,7 +8,7 @@ class _BorrowedBooksTab extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final colorScheme = Theme.of(context).colorScheme;
 
-    return Container(
+    return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
       ),
