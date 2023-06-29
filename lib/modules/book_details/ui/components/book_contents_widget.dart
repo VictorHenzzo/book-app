@@ -34,8 +34,8 @@ class _BookContentsWidget extends StatelessWidget {
             BlocBuilder<BookDetailsBloc, BookDetailsState>(
               builder: (final context, final state) {
                 return switch (state) {
-                  final BookDetailsInitialState _ => const PrimaryLoading(),
-                  final BookDetailsLoadingState _ => const PrimaryLoading(),
+                  final BookDetailsInitialState _ => const PrimaryLoadingWidget(),
+                  final BookDetailsLoadingState _ => const PrimaryLoadingWidget(),
                   final BookDetailsErrorState _ => DefaultErrorWidget(
                       tryAgain: _fetchDescription,
                     ),

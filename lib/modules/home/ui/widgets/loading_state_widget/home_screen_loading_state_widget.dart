@@ -1,5 +1,5 @@
 import 'package:book_app/widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
-import 'package:book_app/widgets/loadings/primary_loading.dart';
+import 'package:book_app/widgets/loadings/primary_loading_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenLoadingStateWidget extends StatelessWidget {
@@ -13,7 +13,7 @@ class HomeScreenLoadingStateWidget extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: const Center(
-        child: PrimaryLoading(),
+        child: PrimaryLoadingWidget(),
       ),
       bottomNavigationBar: const CustomBottomNavigationBar(),
     );
