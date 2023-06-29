@@ -1,4 +1,5 @@
 import 'package:book_app/core/domain/entities/author_entity.dart';
+import 'package:book_app/theme/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class AuthorListTileWidget extends StatelessWidget {
@@ -32,7 +33,9 @@ class AuthorListTileWidget extends StatelessWidget {
               author.imageUrl,
             ),
           ),
-          const SizedBox(width: 10),
+          const SizedBox(
+            width: Dimensions.xsmall,
+          ),
           Flexible(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -22,7 +22,9 @@ class _FavoriteAuthorsWidget extends StatelessWidget {
           horizontal: Dimensions.small,
         ),
         separatorBuilder: (final context, final index) {
-          return const SizedBox(width: 10);
+          return const SizedBox(
+            width: Dimensions.xsmall,
+          );
         },
         itemBuilder: (final context, final index) {
           final author = favoriteAuthors[index];

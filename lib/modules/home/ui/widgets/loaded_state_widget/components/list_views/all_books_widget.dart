@@ -21,7 +21,9 @@ class _AllBooksWidget extends StatelessWidget {
         horizontal: Dimensions.small,
       ),
       separatorBuilder: (final context, final index) {
-        return const SizedBox(height: 10);
+        return const SizedBox(
+          height: Dimensions.xsmall,
+        );
       },
       itemBuilder: (final context, final index) {
         final book = allBooks[index];

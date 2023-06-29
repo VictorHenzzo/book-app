@@ -22,7 +22,9 @@ class _FavoriteBooksWidget extends StatelessWidget {
         ),
         scrollDirection: Axis.horizontal,
         separatorBuilder: (final context, final index) {
-          return const SizedBox(width: 10);
+          return const SizedBox(
+            width: Dimensions.xsmall,
+          );
         },
         itemBuilder: (final context, final index) {
           final book = favoriteBooks[index];

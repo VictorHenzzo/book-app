@@ -11,27 +11,22 @@ class _BorrowedBooksTabWidget extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final primaryColor = Theme.of(context).colorScheme.primary;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.warning,
-            size: screenSize.height * 0.15,
-            color: primaryColor,
-          ),
-          Text(
-            'Não implementado!',
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: primaryColor,
-                ),
-          ),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          Icons.warning,
+          size: screenSize.height * 0.15,
+          color: primaryColor,
+        ),
+        Text(
+          'Não implementado!',
+          overflow: TextOverflow.ellipsis,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: primaryColor,
+              ),
+        ),
+      ],
     );
   }
 }
