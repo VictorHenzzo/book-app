@@ -1,7 +1,7 @@
 import 'package:book_app/core/domain/entities/author_entity.dart';
 
 class AuthorModel extends AuthorProperties {
-  AuthorModel({
+  const AuthorModel({
     required super.name,
     required super.imageUrl,
     required super.booksCount,

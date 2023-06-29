@@ -1,7 +1,7 @@
 import 'package:book_app/core/domain/entities/book_entity.dart';
 
 class BookModel extends BookProperties {
-  BookModel({
+  const BookModel({
     required super.imageUrl,
     required super.name,
     required super.author,

@@ -5,6 +5,7 @@ import 'package:book_app/core/domain/use_cases/books/fetch_all_books_use_case.da
 import 'package:book_app/core/domain/use_cases/books/fetch_favorite_books_use_case.dart';
 import 'package:book_app/core/domain/use_cases/user/fetch_user_image_use_case.dart';
 import 'package:book_app/modules/home/presentation/home_presenter.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'home_event.dart';
@@ -20,7 +21,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> implements HomePresenter {
     on<FetchDependenciesEvent>(_onFetchDependenciesEvent);
   }
 
-  //TODO Add tests
   Future<void> _onFetchDependenciesEvent(
     final FetchDependenciesEvent event,
     final Emitter<HomeState> emit,

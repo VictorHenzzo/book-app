@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 class AuthorEntity extends AuthorProperties {
   AuthorEntity({
     required super.name,
@@ -7,8 +9,8 @@ class AuthorEntity extends AuthorProperties {
   });
 }
 
-class AuthorProperties {
-  AuthorProperties({
+class AuthorProperties extends Equatable {
+  const AuthorProperties({
     required this.name,
     required this.imageUrl,
     required this.booksCount,
@@ -19,4 +21,12 @@ class AuthorProperties {
   final String imageUrl;
   final int booksCount;
   final String id;
+
+  @override
+  List<Object?> get props => [
+        name,
+        imageUrl,
+        booksCount,
+        id,
+      ];
 }
