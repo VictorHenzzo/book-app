@@ -1,5 +1,5 @@
-import 'package:book_app/core/domain/repositories/user_repository.dart';
 import 'package:book_app/core/data/data_sources/graph_ql/graph_ql_data_source.dart';
+import 'package:book_app/core/domain/repositories/user_repository.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:graphql/client.dart';
 import 'package:injectable/injectable.dart';
