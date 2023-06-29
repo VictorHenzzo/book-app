@@ -31,7 +31,6 @@ class _BookContentsWidget extends StatelessWidget {
             _BookHeaderWidget(book: book),
             //TODO Create size tokens
             const SizedBox(height: 15),
-            //TODO Add spacers here
             BlocBuilder<BookDetailsBloc, BookDetailsState>(
               builder: (final context, final state) {
                 return switch (state) {
