@@ -1,7 +1,6 @@
-import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart';
+import 'package:book_app/core/data/graph_ql/graph_ql_data_source.dart';
 import 'package:graphql/client.dart' hide Response;
 
-//TODO Mover isso daqui para a pasta data
 class GraphQLDataSourceAdapter implements GraphQLDataSource {
   GraphQLDataSourceAdapter({
     required this.client,

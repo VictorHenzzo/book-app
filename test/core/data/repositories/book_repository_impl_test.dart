@@ -1,6 +1,6 @@
 import 'package:book_app/core/data/repositories/book_repository_impl.dart';
 import 'package:book_app/core/domain/entities/book_entity.dart';
-import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart';
+import 'package:book_app/core/data/graph_ql/graph_ql_data_source.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:graphql/client.dart' hide Response;

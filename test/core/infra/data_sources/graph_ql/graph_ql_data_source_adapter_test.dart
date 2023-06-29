@@ -1,4 +1,4 @@
-import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source_adapter.dart';
+import 'package:book_app/core/data/graph_ql/graph_ql_data_source_adapter.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:graphql/client.dart';
 
@@ -19,7 +19,8 @@ void main() {
       client: client,
     );
 
-    queryArguments = r'''
+    queryArguments =
+        r'''
       query ReadRepositories($nRepositories: Int!) {
         viewer {
           repositories(last: $nRepositories) {
