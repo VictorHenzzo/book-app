@@ -10,7 +10,7 @@ class BookDetailsRoute {
 
   static Widget of(final BuildContext context) {
     final presenter = BookDetailsBloc(
-      fetchBookDescriptionUseCase: ServiceLocator.provide(),
+      fetchBookDetailsUseCase: ServiceLocator.provide(),
     );
     final book = ModalRoute.of(context)!.settings.arguments as BookEntity;
 

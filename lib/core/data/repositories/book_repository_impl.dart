@@ -1,9 +1,10 @@
 import 'package:book_app/core/data/data_sources/graph_ql/graph_ql_data_source.dart';
+import 'package:book_app/core/data/models/book_details_model.dart';
 import 'package:book_app/core/data/models/book_model.dart';
 import 'package:book_app/core/domain/entities/book_entity.dart';
 import 'package:book_app/core/domain/repositories/book_repository.dart';
 import 'package:book_app/core/domain/use_cases/books/fetch_all_books_use_case.dart';
-import 'package:book_app/core/domain/use_cases/books/fetch_book_description_use_case.dart';
+import 'package:book_app/core/domain/use_cases/books/fetch_book_details_use_case.dart';
 import 'package:book_app/core/domain/use_cases/books/fetch_favorite_books_use_case.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:graphql/client.dart';
@@ -95,14 +96,15 @@ class BookRepositoryImpl implements BookRepository {
   }
 
   @override
-  FetchBookDescriptionResult fetchBookDescription(
+  FetchBookDetailsResult fetchBookDetails(
     final String bookId,
   ) async {
     try {
       const queryArguments = r'''
-        query FetchBookDescription($id: ID!) {
+        query FetchBookDetails($id: ID!) {
           book(id: $id) {
             description
+            isFavorite
           }
         }
       ''';
@@ -114,8 +116,12 @@ class BookRepositoryImpl implements BookRepository {
         },
       );
 
+      final bookDetails = BookDetailsModel.fromMap(
+        response.body['book'],
+      ).toEntity();
+
       return Result.success(
-        response.body['book']['description'],
+        bookDetails,
       );
     } on OperationException catch (exception, stackTrace) {
       return Result.failure(

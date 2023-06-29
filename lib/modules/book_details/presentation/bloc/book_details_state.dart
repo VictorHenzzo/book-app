@@ -24,7 +24,7 @@ final class BookDetailsLoadedState extends BookDetailsState {
     required this.bookDetails,
   });
 
-  final String bookDetails;
+  final BookDetailsEntity bookDetails;
 
   @override
   List<Object?> get props => [

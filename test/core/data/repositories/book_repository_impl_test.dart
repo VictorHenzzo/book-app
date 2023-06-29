@@ -1,5 +1,6 @@
 import 'package:book_app/core/data/data_sources/graph_ql/graph_ql_data_source.dart';
 import 'package:book_app/core/data/repositories/book_repository_impl.dart';
+import 'package:book_app/core/domain/entities/book_details_entity.dart';
 import 'package:book_app/core/domain/entities/book_entity.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -205,14 +206,15 @@ void main() {
     });
   });
 
-  group('FetchBookDescription', () {
+  group('FetchBookDetails', () {
     group('Success', () {
       setUp(() {
         queryArguments =
             r'''
-        query FetchBookDescription($id: ID!) {
+        query FetchBookDetails($id: ID!) {
           book(id: $id) {
             description
+            isFavorite
           }
         }
       ''';
@@ -227,7 +229,8 @@ void main() {
             body: {
               'book': {
                 'description':
-                    'Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.\n\nNoted software expert Robert C. Martin presents a revolutionary paradigm with Clean Code: A Handbook of Agile Software Craftsmanship. Martin has teamed up with his colleagues from Object Mentor to distill their best agile practice of cleaning code “on the fly” into a book that will instill within you the values of a software craftsman and make you a better programmer–but only if you work at it.\n\nWhat kind of work will you be doing? You’ll be reading code–lots of code. And you will be challenged to think about what’s right about that code, and what’s wrong with it. More importantly, you will be challenged to reassess your professional values and your commitment to your craft.\n\nClean Code is divided into three parts. The first describes the principles, patterns, and practices of writing clean code. The second part consists of several case studies of increasing complexity. Each case study is an exercise in cleaning up code–of transforming a code base that has some problems into one that is sound and efficient. The third part is the payoff: a single chapter containing a list of heuristics and “smells” gathered while creating the case studies. The result is a knowledge base that describes the way we think when we write, read, and clean code.\n\nReaders will come away from this book understanding\nHow to tell the difference between good and bad code\nHow to write good code and how to transform bad code into good code\nHow to create good names, good functions, good objects, and good classes\nHow to format code for maximum readability\nHow to implement complete error handling without obscuring code logic\nHow to unit test and practice test-driven development\nThis book is a must for any developer, software engineer, project manager, team lead, or systems analyst with an interest in producing better code.'
+                    'Practical Software Architecture Solutions from the Legendary Robert C. Martin (“Uncle Bob”)\n\n \n\nBy applying universal rules of software architecture, you can dramatically improve developer productivity throughout the life of any software system. Now, building upon the success of his best-selling books Clean Code and The Clean Coder, legendary software craftsman Robert C. Martin (“Uncle Bob”) reveals those rules and helps you apply them.\n\n \n\nMartin’s Clean Architecture doesn’t merely present options. Drawing on over a half-century of experience in software environments of every imaginable type, Martin tells you what choices to make and why they are critical to your success. As you’ve come to expect from Uncle Bob, this book is packed with direct, no-nonsense solutions for the real challenges you’ll face–the ones that will make or break your projects.\n\nLearn what software architects need to achieve–and core disciplines and practices for achieving it\nMaster essential software design principles for addressing function, component separation, and data management\nSee how programming paradigms impose discipline by restricting what developers can do\nUnderstand what’s critically important and what’s merely a “detail”\nImplement optimal, high-level structures for web, database, thick-client, console, and embedded applications\nDefine appropriate boundaries and layers, and organize components and services\nSee why designs and architectures go wrong, and how to prevent (or fix) these failures\nClean Architecture is essential reading for every current or aspiring software architect, systems analyst, system designer, and software manager–and for every programmer who must execute someone else’s designs.',
+                'isFavorite': false
               }
             },
           ),
@@ -236,7 +239,7 @@ void main() {
 
       test('Should be able to call GraphQLDataSource with the correct values', () async {
         // act
-        await sut.fetchBookDescription(
+        await sut.fetchBookDetails(
           bookId,
         );
 
@@ -251,16 +254,16 @@ void main() {
         ).called(1);
       });
 
-      test('Should be able to return a description', () async {
+      test('Should be able to return a bookDetailsEntity', () async {
         // act
-        final result = await sut.fetchBookDescription(
+        final result = await sut.fetchBookDetails(
           bookId,
         );
 
         // assert
         expect(
           result.getOrNull(),
-          isA<String>(),
+          isA<BookDetailsEntity>(),
         );
       });
     });
@@ -276,7 +279,7 @@ void main() {
         ).thenThrow(OperationException());
 
         // act
-        final result = await sut.fetchBookDescription(
+        final result = await sut.fetchBookDetails(
           bookId,
         );
 

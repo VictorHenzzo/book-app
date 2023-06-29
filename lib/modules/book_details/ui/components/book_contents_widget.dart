@@ -40,7 +40,7 @@ class _BookContentsWidget extends StatelessWidget {
                       tryAgain: _fetchDescription,
                     ),
                   final BookDetailsLoadedState loadedState => Text(
-                      loadedState.bookDetails,
+                      loadedState.bookDetails.description,
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                 };

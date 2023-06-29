@@ -1,4 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:book_app/core/domain/entities/book_details_entity.dart';
 import 'package:book_app/core/domain/entities/book_entity.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:book_app/modules/book_details/presentation/bloc/book_details_bloc.dart';
@@ -10,23 +11,26 @@ import '../../../../mocks.dart';
 
 void main() {
   late BookDetailsBloc sut;
-  late FetchBookDescriptionUseCaseMock fetchBookDescriptionUseCase;
+  late FetchBookDetailsUseCaseMock fetchBookDetailsUseCase;
 
   late AppError appError;
-  late String bookDescription;
+  late BookDetailsEntity bookDetails;
   late BookEntity book;
 
   setUp(() {
-    fetchBookDescriptionUseCase = FetchBookDescriptionUseCaseMock();
+    fetchBookDetailsUseCase = FetchBookDetailsUseCaseMock();
     sut = BookDetailsBloc(
-      fetchBookDescriptionUseCase: fetchBookDescriptionUseCase,
+      fetchBookDetailsUseCase: fetchBookDetailsUseCase,
     );
 
     appError = AppError(
       stackTrace: StackTrace.empty,
       exception: Exception(),
     );
-    bookDescription = 'book description';
+    bookDetails = const BookDetailsEntity(
+      description: 'book description',
+      isFavorite: true,
+    );
     book = const BookEntity(
       imageUrl: 'imageUrl',
       name: 'name',
@@ -35,18 +39,18 @@ void main() {
     );
   });
 
-  void mockFetchBookDescription({
+  void mockFetchBookDetailsUseCase({
     required final bool success,
   }) {
     final whenCall = when(
-      () => fetchBookDescriptionUseCase.fetchBookDescription(
+      () => fetchBookDetailsUseCase.fetchBookDetails(
         any(),
       ),
     );
 
     if (success) {
       whenCall.thenAnswer(
-        (final _) async => Result.success(bookDescription),
+        (final _) async => Result.success(bookDetails),
       );
     } else {
       whenCall.thenAnswer(
@@ -56,9 +60,9 @@ void main() {
   }
 
   blocTest(
-    'Should be able to call FetchBookDescriptionUseCase with the correct values',
+    'Should be able to call FetchBookDetailsUseCase with the correct values',
     setUp: () {
-      mockFetchBookDescription(success: true);
+      mockFetchBookDetailsUseCase(success: true);
     },
     build: () => sut,
     act: (final bloc) => bloc.add(
@@ -66,7 +70,7 @@ void main() {
     ),
     verify: (final _) {
       verify(
-        () => fetchBookDescriptionUseCase.fetchBookDescription(
+        () => fetchBookDetailsUseCase.fetchBookDetails(
           book.id,
         ),
       ).called(1);
@@ -76,7 +80,7 @@ void main() {
   blocTest(
     'Should emit a loading and then a loaded state on success',
     setUp: () {
-      mockFetchBookDescription(success: true);
+      mockFetchBookDetailsUseCase(success: true);
     },
     build: () => sut,
     act: (final bloc) => bloc.add(
@@ -85,7 +89,7 @@ void main() {
     expect: () => <BookDetailsState>[
       const BookDetailsLoadingState(),
       BookDetailsLoadedState(
-        bookDetails: bookDescription,
+        bookDetails: bookDetails,
       ),
     ],
   );
@@ -93,7 +97,7 @@ void main() {
   blocTest(
     'Should emit a loading and then a error state on failure',
     setUp: () {
-      mockFetchBookDescription(success: false);
+      mockFetchBookDetailsUseCase(success: false);
     },
     build: () => sut,
     act: (final bloc) => bloc.add(
