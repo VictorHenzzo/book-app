@@ -18,7 +18,9 @@ class _LoadedBookContentsWidget extends StatelessWidget {
             book: book,
             isFavorite: state.bookDetails.isFavorite,
           ),
-          const SizedBox(height: 5),
+          const SizedBox(
+            height: Dimensions.xxsmall,
+          ),
           Text(
             state.bookDetails.description,
             style: Theme.of(context).textTheme.bodyMedium,

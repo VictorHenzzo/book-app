@@ -8,8 +8,8 @@ class _BorrowedBooksTabWidget extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    final colorScheme = Theme.of(context).colorScheme;
+    final screenSize = MediaQuery.of(context).size;
+    final primaryColor = Theme.of(context).colorScheme.primary;
 
     return Padding(
       padding: const EdgeInsets.symmetric(
@@ -20,15 +20,15 @@ class _BorrowedBooksTabWidget extends StatelessWidget {
         children: [
           Icon(
             Icons.warning,
-            size: 100,
-            color: colorScheme.primary,
+            size: screenSize.height * 0.15,
+            color: primaryColor,
           ),
           Text(
             'Não implementado!',
             overflow: TextOverflow.ellipsis,
-            style: textTheme.titleMedium?.copyWith(
-              color: colorScheme.primary,
-            ),
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: primaryColor,
+                ),
           ),
         ],
       ),

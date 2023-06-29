@@ -1,4 +1,5 @@
 import 'package:book_app/core/domain/entities/book_entity.dart';
+import 'package:book_app/theme/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class BookBannerWidget extends StatelessWidget {
@@ -35,7 +36,9 @@ class BookBannerWidget extends StatelessWidget {
                 height: heigth * 0.7,
               ),
             ),
-            const SizedBox(height: 5),
+            const SizedBox(
+              height: Dimensions.xxsmall,
+            ),
             Text(
               book.name,
               overflow: TextOverflow.ellipsis,

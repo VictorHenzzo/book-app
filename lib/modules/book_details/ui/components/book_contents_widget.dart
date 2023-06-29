@@ -16,9 +16,9 @@ class _BookContentsWidget extends StatelessWidget {
     //TODO Create size tokens
     return Container(
       padding: const EdgeInsets.only(
-        left: 15,
-        right: 15,
-        top: 30,
+        left: Dimensions.small,
+        right: Dimensions.small,
+        top: Dimensions.large,
       ),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(

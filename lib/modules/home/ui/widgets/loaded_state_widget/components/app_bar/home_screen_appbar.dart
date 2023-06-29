@@ -70,13 +70,10 @@ class _AppBarTitle extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
-          height: 40,
-          child: CircleAvatar(
-            //TODO It's breaking on lookup
-            backgroundImage: NetworkImage(
-              userImageUrl,
-            ),
+        CircleAvatar(
+          //TODO It's breaking on lookup
+          backgroundImage: NetworkImage(
+            userImageUrl,
           ),
         ),
       ],

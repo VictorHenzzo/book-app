@@ -3,6 +3,7 @@ import 'package:book_app/core/domain/entities/book_entity.dart';
 import 'package:book_app/modules/book_details/navigation/book_details_route.dart';
 import 'package:book_app/modules/home/presentation/bloc/home_bloc.dart';
 import 'package:book_app/modules/home/presentation/home_presenter.dart';
+import 'package:book_app/theme/dimensions.dart';
 import 'package:book_app/widgets/authors/author_list_tile_widget.dart';
 import 'package:book_app/widgets/books/book_banner_widget.dart';
 import 'package:book_app/widgets/books/book_list_tile_widget.dart';

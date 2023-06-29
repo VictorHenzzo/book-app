@@ -29,15 +29,17 @@ class _BookTypeChipWidgetState extends State<_BookTypeChipWidget> {
   @override
   Widget build(final BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: Dimensions.huge,
       child: ListView.separated(
         itemCount: types.length,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(
-          horizontal: 15,
+          horizontal: Dimensions.small,
         ),
         separatorBuilder: (final context, final index) {
-          return const SizedBox(width: 10);
+          return const SizedBox(
+            width: Dimensions.xsmall,
+          );
         },
         itemBuilder: (final context, final index) {
           final isSelected = index == selectedIndex;

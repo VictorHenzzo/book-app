@@ -1,3 +1,4 @@
+import 'package:book_app/theme/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class DefaultErrorWidget extends StatelessWidget {
@@ -28,13 +29,17 @@ class DefaultErrorWidget extends StatelessWidget {
             color: colorScheme.error,
           ),
         ),
-        const SizedBox(height: 15),
+        const SizedBox(
+          height: Dimensions.small,
+        ),
         Text(
           'Desculpe, não foi possível carregar o conteúdo neste momento.',
           style: textTheme.bodyMedium,
           textAlign: TextAlign.center,
         ),
-        const SizedBox(height: 15),
+        const SizedBox(
+          height: Dimensions.small,
+        ),
         ElevatedButton(
           onPressed: tryAgain,
           child: Text(

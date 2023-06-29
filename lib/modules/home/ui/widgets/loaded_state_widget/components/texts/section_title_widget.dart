@@ -14,7 +14,7 @@ class _SectionTitleWidget extends StatelessWidget {
   Widget build(final BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 15,
+        horizontal: Dimensions.small,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
