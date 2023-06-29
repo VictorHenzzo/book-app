@@ -11,15 +11,11 @@ class HomeScreenErrorStateWidget extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-
     return Scaffold(
       bottomNavigationBar: const CustomBottomNavigationBar(),
       body: Center(
         child: DefaultErrorWidget(
           tryAgain: tryAgain,
-          width: screenSize.width * 0.8,
-          heigth: screenSize.height * 0.5,
         ),
       ),
     );

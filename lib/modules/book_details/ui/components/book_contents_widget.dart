@@ -1,10 +1,12 @@
 part of '../book_details_screen.dart';
 
 class _BookContentsWidget extends StatelessWidget {
-  const _BookContentsWidget({
+  _BookContentsWidget({
     required this.presenter,
     required this.book,
-  }) : super(key: const Key('bookContentsWidget'));
+  }) : super(key: const Key('bookContentsWidget')) {
+    _fetchDescription();
+  }
 
   final BookDetailsPresenter presenter;
   final BookEntity book;
@@ -27,14 +29,35 @@ class _BookContentsWidget extends StatelessWidget {
         child: Column(
           children: [
             _BookHeaderWidget(book: book),
+            //TODO Create size tokens
             const SizedBox(height: 15),
-            _BookDescriptionWidget(
-              book: book,
-              presenter: presenter,
+            //TODO Add spacers here
+            BlocBuilder<BookDetailsBloc, BookDetailsState>(
+              builder: (final context, final state) {
+                return switch (state) {
+                  final BookDetailsInitialState _ => const PrimaryLoading(),
+                  final BookDetailsLoadingState _ => const PrimaryLoading(),
+                  final BookDetailsErrorState _ => DefaultErrorWidget(
+                      tryAgain: _fetchDescription,
+                    ),
+                  final BookDetailsLoadedState loadedState => Text(
+                      loadedState.bookDetails,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                };
+              },
             ),
             const SizedBox(height: 15),
           ],
         ),
+      ),
+    );
+  }
+
+  void _fetchDescription() {
+    presenter.addEvent(
+      FetchContentEvent(
+        bookEntity: book,
       ),
     );
   }
