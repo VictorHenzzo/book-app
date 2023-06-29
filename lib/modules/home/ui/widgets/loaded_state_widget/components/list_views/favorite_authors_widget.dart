@@ -29,7 +29,7 @@ class _FavoriteAuthorsWidget extends StatelessWidget {
 
           return AuthorListTileWidget(
             author: author,
-            key: Key('authorListTileWidget ${author.id}'),
+            key: Key('authorListTileWidget - ${author.id}'),
           );
         },
       ),

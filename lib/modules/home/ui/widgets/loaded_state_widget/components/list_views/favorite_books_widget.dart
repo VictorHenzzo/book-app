@@ -30,11 +30,11 @@ class _FavoriteBooksWidget extends StatelessWidget {
           return BookBannerWidget(
             book: book,
             heigth: screenSize.height * 0.35,
-            key: Key('bookBannerWidget ${book.id}'),
             onPressed: (final book) => _onPressed(
               book,
               context,
             ),
+            key: Key('bookBannerWidget - ${book.id}'),
           );
         },
       ),

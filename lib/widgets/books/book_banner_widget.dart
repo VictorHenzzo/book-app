@@ -11,6 +11,7 @@ class BookBannerWidget extends StatelessWidget {
 
   final BookEntity book;
   final Function(BookEntity) onPressed;
+  //TODO Remove this
   final double heigth;
 
   @override

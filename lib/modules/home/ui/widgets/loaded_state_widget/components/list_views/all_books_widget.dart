@@ -32,6 +32,7 @@ class _AllBooksWidget extends StatelessWidget {
             book,
             context,
           ),
+          key: Key('bookListTileWidget - ${book.id}'),
         );
       },
     );
