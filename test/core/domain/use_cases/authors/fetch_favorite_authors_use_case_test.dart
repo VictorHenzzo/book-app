@@ -23,7 +23,7 @@ void main() {
       exception: Exception(),
     );
 
-    author = AuthorEntity(
+    author = const AuthorEntity(
       name: 'name',
       imageUrl: 'imageUrl',
       booksCount: 0,

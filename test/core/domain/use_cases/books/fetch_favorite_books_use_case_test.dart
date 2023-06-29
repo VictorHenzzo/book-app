@@ -23,7 +23,7 @@ void main() {
       exception: Exception(),
     );
 
-    book = BookEntity(
+    book = const BookEntity(
       imageUrl: 'imageUrl',
       name: 'name',
       author: 'author',

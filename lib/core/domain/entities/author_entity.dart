@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class AuthorEntity extends AuthorProperties {
-  AuthorEntity({
+  const AuthorEntity({
     required super.name,
     required super.imageUrl,
     required super.booksCount,

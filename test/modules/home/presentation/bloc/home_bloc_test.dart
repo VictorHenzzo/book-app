@@ -50,7 +50,7 @@ void main() {
     favoriteBooks = [book];
     allBooks = [book];
     favoriteAuthors = [
-      AuthorEntity(
+      const AuthorEntity(
         name: 'name',
         imageUrl: 'imageUrl',
         booksCount: 0,
