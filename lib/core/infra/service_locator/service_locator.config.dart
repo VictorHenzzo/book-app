@@ -11,8 +11,6 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:book_app/core/data/data_sources/graph_ql/graph_ql_data_source.dart'
     as _i4;
-import 'package:book_app/core/data/data_sources/graph_ql/graph_ql_data_source_bindings.dart'
-    as _i16;
 import 'package:book_app/core/data/repositories/author_repository_impl.dart'
     as _i6;
 import 'package:book_app/core/data/repositories/book_repository_impl.dart'
@@ -33,11 +31,13 @@ import 'package:book_app/core/domain/use_cases/books/fetch_favorite_books_use_ca
     as _i14;
 import 'package:book_app/core/domain/use_cases/user/fetch_user_image_use_case.dart'
     as _i15;
-import 'package:book_app/core/infra/service_locator/modules/authors_module.dart'
+import 'package:book_app/core/infra/service_locator/bindings/data/graph_ql_data_source_bindings.dart'
+    as _i16;
+import 'package:book_app/core/infra/service_locator/bindings/modules/authors_module.dart'
     as _i17;
-import 'package:book_app/core/infra/service_locator/modules/book_module.dart'
+import 'package:book_app/core/infra/service_locator/bindings/modules/book_module.dart'
     as _i18;
-import 'package:book_app/core/infra/service_locator/modules/user_module.dart'
+import 'package:book_app/core/infra/service_locator/bindings/modules/user_module.dart'
     as _i19;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:graphql/client.dart' as _i3;
