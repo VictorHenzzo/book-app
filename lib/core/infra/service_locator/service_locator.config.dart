@@ -85,9 +85,8 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i15.FetchUserImageUseCaseImpl(gh<_i8.UserRepository>()));
     gh.factory<_i11.FetchAllBooksUseCase>(() => bookModule
         .getFetchAllBooksUseCase(gh<_i11.FetchAllBooksUseCaseImpl>()));
-    gh.factory<_i12.FetchBookDetailsUseCase>(() =>
-        bookModule.getFetchBookDescriptionUseCase(
-            gh<_i12.FetchBookDetailsUseCaseImpl>()));
+    gh.factory<_i12.FetchBookDetailsUseCase>(() => bookModule
+        .getFetchBookDetailsUseCase(gh<_i12.FetchBookDetailsUseCaseImpl>()));
     gh.factory<_i13.FetchFavoriteAuthorsUseCase>(() =>
         authorsModule.getFetchFavoriteAuthorsUseCase(
             gh<_i13.FetchFavoriteAuthorsUseCaseImpl>()));

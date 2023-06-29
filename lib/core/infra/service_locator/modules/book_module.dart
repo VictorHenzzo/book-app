@@ -22,7 +22,7 @@ abstract class BookModule {
   ) =>
       impl;
 
-  FetchBookDetailsUseCase getFetchBookDescriptionUseCase(
+  FetchBookDetailsUseCase getFetchBookDetailsUseCase(
     final FetchBookDetailsUseCaseImpl impl,
   ) =>
       impl;
