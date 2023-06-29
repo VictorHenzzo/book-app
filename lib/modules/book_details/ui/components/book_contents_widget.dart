@@ -13,7 +13,6 @@ class _BookContentsWidget extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    //TODO Create size tokens
     return Container(
       padding: const EdgeInsets.only(
         left: Dimensions.small,
