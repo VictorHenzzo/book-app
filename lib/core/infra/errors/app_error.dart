@@ -1,4 +1,4 @@
-class AppError implements Exception {
+class AppError {
   const AppError({
     required this.stackTrace,
     required this.exception,
