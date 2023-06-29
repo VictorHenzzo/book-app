@@ -16,7 +16,6 @@ class BookListTileWidget extends StatelessWidget {
   Widget build(final BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final screenSize = MediaQuery.of(context).size;
-    const borderRadius = 15.0;
 
     return GestureDetector(
       onTap: () => onPressed(book),
@@ -26,7 +25,9 @@ class BookListTileWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(borderRadius),
+              borderRadius: BorderRadius.circular(
+                Dimensions.smallBorderRadius,
+              ),
               child: Image.network(
                 book.imageUrl,
               ),

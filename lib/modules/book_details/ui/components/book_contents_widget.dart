@@ -22,7 +22,9 @@ class _BookContentsWidget extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(35),
+          topLeft: Radius.circular(
+            Dimensions.normalBorderRadius,
+          ),
         ),
         color: Theme.of(context).colorScheme.surface,
       ),

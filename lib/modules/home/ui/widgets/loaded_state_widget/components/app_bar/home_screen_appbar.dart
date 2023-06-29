@@ -17,7 +17,9 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(35),
+          bottomRight: Radius.circular(
+            Dimensions.normalBorderRadius,
+          ),
         ),
       ),
       bottom: TabBar(

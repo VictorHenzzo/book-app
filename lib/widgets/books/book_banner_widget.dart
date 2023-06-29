@@ -30,7 +30,9 @@ class BookBannerWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(
+                Dimensions.smallBorderRadius,
+              ),
               child: Image.network(
                 book.imageUrl,
                 height: heigth * 0.7,

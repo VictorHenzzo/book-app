@@ -50,7 +50,9 @@ class _BookTypeChipWidgetState extends State<_BookTypeChipWidget> {
             label: Text(types[index]),
             labelStyle: labelStyle,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(
+                Dimensions.normalBorderRadius,
+              ),
             ),
             side: BorderSide(
               color: colorScheme.shadow,

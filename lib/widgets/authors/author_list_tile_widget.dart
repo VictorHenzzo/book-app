@@ -14,12 +14,13 @@ class AuthorListTileWidget extends StatelessWidget {
   Widget build(final BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final screenSize = MediaQuery.of(context).size;
-    const borderRadius = 15.0;
 
     return Container(
       width: screenSize.width * 0.75,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius),
+        borderRadius: BorderRadius.circular(
+          Dimensions.smallBorderRadius,
+        ),
         border: Border.all(
           color: Theme.of(context).colorScheme.shadow,
         ),
@@ -28,7 +29,9 @@ class AuthorListTileWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius: BorderRadius.circular(
+              Dimensions.smallBorderRadius,
+            ),
             child: Image.network(
               author.imageUrl,
             ),

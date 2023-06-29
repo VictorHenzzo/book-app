@@ -7,4 +7,7 @@ class Dimensions {
   static const double normal = 25;
   static const double large = 30;
   static const double huge = 50;
+
+  static const double smallBorderRadius = 15;
+  static const double normalBorderRadius = 35;
 }
