@@ -1,10 +1,10 @@
 part of '../../home_screen_loaded_state_widget.dart';
 
-class _MyBooksTab extends StatelessWidget {
-  const _MyBooksTab({
+class _MyBooksTabWidget extends StatelessWidget {
+  const _MyBooksTabWidget({
     required this.state,
     required this.presenter,
-  }) : super(key: const Key('myBooksTab'));
+  }) : super(key: const Key('myBooksTabWidget'));
 
   final HomeLoadedState state;
   final HomePresenter presenter;
