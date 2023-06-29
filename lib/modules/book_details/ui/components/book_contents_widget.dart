@@ -26,7 +26,7 @@ class _BookContentsWidget extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            _BookHeader(book: book),
+            _BookHeaderWidget(book: book),
             const SizedBox(height: 15),
             _BookDescriptionWidget(
               book: book,

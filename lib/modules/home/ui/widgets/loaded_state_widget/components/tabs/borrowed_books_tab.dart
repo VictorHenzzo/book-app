@@ -1,7 +1,10 @@
 part of '../../home_screen_loaded_state_widget.dart';
 
 class _BorrowedBooksTab extends StatelessWidget {
-  const _BorrowedBooksTab();
+  const _BorrowedBooksTab()
+      : super(
+          key: const Key('borrowedBooksTab'),
+        );
 
   @override
   Widget build(final BuildContext context) {

@@ -4,7 +4,7 @@ class _SectionTitle extends StatelessWidget {
   const _SectionTitle({
     required this.sectionTitle,
     this.showNavigationButton = true,
-  });
+  }) : super(key: const Key('sectionTitle'));
 
   final String sectionTitle;
   final bool showNavigationButton;

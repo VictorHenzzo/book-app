@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 void main() async {
   ServiceLocator.init();
   //TODO Add readme information
-  //TODO Add key on widgets
-  //TODO Fix widgets sufix
+
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,

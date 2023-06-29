@@ -4,7 +4,7 @@ class _MyBooksTab extends StatelessWidget {
   const _MyBooksTab({
     required this.state,
     required this.presenter,
-  });
+  }) : super(key: const Key('myBooksTab'));
 
   final HomeLoadedState state;
   final HomePresenter presenter;

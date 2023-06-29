@@ -1,9 +1,9 @@
 part of '../../book_details_screen.dart';
 
-class _BookHeader extends StatelessWidget {
-  const _BookHeader({
+class _BookHeaderWidget extends StatelessWidget {
+  const _BookHeaderWidget({
     required this.book,
-  }) : super(key: const Key('bookHeader'));
+  }) : super(key: const Key('bookHeaderWidget'));
 
   final BookEntity book;
 

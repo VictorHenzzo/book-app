@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'components/app_bar/book_details_app_bar.dart';
 part 'components/book_contents_widget.dart';
 part 'components/book_description/book_description_widget.dart';
-part 'components/header/book_header.dart';
+part 'components/header/book_header_widget.dart';
 
 class BookDetailsScreen extends StatelessWidget {
   const BookDetailsScreen({

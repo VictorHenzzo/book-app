@@ -1,7 +1,10 @@
 part of '../../book_details_screen.dart';
 
 class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const BookDetailsAppBar() : super(key: const Key('bookDetailsAppBar'));
+  const BookDetailsAppBar()
+      : super(
+          key: const Key('bookDetailsAppBar'),
+        );
 
   //TODO Usar sliver pra dar uma animação interessante, colocar a foto aqui
   @override
@@ -23,6 +26,7 @@ class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
+  //TODO Fix this height
   @override
   Size get preferredSize => const Size.fromHeight(120);
 }

@@ -4,7 +4,7 @@ class _FavoriteBooksWidget extends StatelessWidget {
   const _FavoriteBooksWidget({
     required this.favoriteBooks,
     required this.presenter,
-  });
+  }) : super(key: const Key('favoriteBooksWidget'));
 
   final List<BookEntity> favoriteBooks;
   final HomePresenter presenter;
