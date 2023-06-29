@@ -9,6 +9,10 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:book_app/core/data/data_sources/graph_ql/graph_ql_data_source.dart'
+    as _i4;
+import 'package:book_app/core/data/data_sources/graph_ql/graph_ql_data_source_bindings.dart'
+    as _i19;
 import 'package:book_app/core/data/repositories/author_repository_impl.dart'
     as _i6;
 import 'package:book_app/core/data/repositories/book_repository_impl.dart'
@@ -29,16 +33,12 @@ import 'package:book_app/core/domain/use_cases/books/fetch_favorite_books_use_ca
     as _i14;
 import 'package:book_app/core/domain/use_cases/user/fetch_user_image_use_case.dart'
     as _i15;
-import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source.dart'
-    as _i4;
-import 'package:book_app/core/infra/data_sources/graph_ql/graph_ql_data_source_bindings.dart'
-    as _i16;
 import 'package:book_app/core/infra/service_locator/modules/authors_module.dart'
-    as _i17;
+    as _i16;
 import 'package:book_app/core/infra/service_locator/modules/book_module.dart'
-    as _i18;
+    as _i17;
 import 'package:book_app/core/infra/service_locator/modules/user_module.dart'
-    as _i19;
+    as _i18;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:graphql/client.dart' as _i3;
 import 'package:injectable/injectable.dart' as _i2;
@@ -100,10 +100,10 @@ extension GetItInjectableX on _i1.GetIt {
   }
 }
 
-class _$GraphQlDataSourceBindings extends _i16.GraphQlDataSourceBindings {}
+class _$AuthorsModule extends _i16.AuthorsModule {}
 
-class _$AuthorsModule extends _i17.AuthorsModule {}
+class _$BookModule extends _i17.BookModule {}
 
-class _$BookModule extends _i18.BookModule {}
+class _$UserModule extends _i18.UserModule {}
 
-class _$UserModule extends _i19.UserModule {}
+class _$GraphQlDataSourceBindings extends _i19.GraphQlDataSourceBindings {}
