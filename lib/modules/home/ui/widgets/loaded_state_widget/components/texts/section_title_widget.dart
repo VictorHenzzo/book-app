@@ -1,10 +1,11 @@
 part of '../../home_screen_loaded_state_widget.dart';
 
-class _SectionTitle extends StatelessWidget {
-  const _SectionTitle({
+class _SectionTitleWidget extends StatelessWidget {
+  const _SectionTitleWidget({
     required this.sectionTitle,
     this.showNavigationButton = true,
-  }) : super(key: const Key('sectionTitle'));
+    super.key,
+  });
 
   final String sectionTitle;
   final bool showNavigationButton;

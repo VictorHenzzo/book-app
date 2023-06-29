@@ -15,8 +15,9 @@ class _MyBooksTabWidget extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 25),
-          const _SectionTitle(
+          const _SectionTitleWidget(
             sectionTitle: 'Livros favoritos',
+            key: Key('sectionTitleWidget - FavoriteBooks'),
           ),
           _FavoriteBooksWidget(
             presenter: presenter,
@@ -32,17 +33,19 @@ class _MyBooksTabWidget extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 25),
-                const _SectionTitle(
+                const _SectionTitleWidget(
                   sectionTitle: 'Autores favoritos',
+                  key: Key('sectionTitleWidget - FavoriteAuthors'),
                 ),
                 _FavoriteAuthorsWidget(
                   favoriteAuthors: state.favoriteAuthors,
                   presenter: presenter,
                 ),
                 const SizedBox(height: 25),
-                const _SectionTitle(
+                const _SectionTitleWidget(
                   sectionTitle: 'Biblioteca',
                   showNavigationButton: false,
+                  key: Key('sectionTitleWidget - Library'),
                 ),
                 const SizedBox(height: 25),
                 const _BookTypeChipWidget(),

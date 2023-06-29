@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 part 'components/app_bar/home_screen_appbar.dart';
 part 'components/tabs/borrowed_books_tab_widget.dart';
 part 'components/tabs/my_books_tab_widget.dart';
-part 'components/texts/section_title.dart';
+part 'components/texts/section_title_widget.dart';
 part 'components/list_views/favorite_books_widget.dart';
 part 'components/list_views/favorite_authors_widget.dart';
 part 'components/list_views/all_books_widget.dart';
