@@ -12,9 +12,7 @@ class HomeScreenLoadingStateWidget extends StatelessWidget {
   Widget build(final BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: const Center(
-        child: PrimaryLoadingWidget(),
-      ),
+      body: const PrimaryLoadingWidget(),
       bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }

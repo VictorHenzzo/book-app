@@ -3,9 +3,11 @@ part of '../../book_details_screen.dart';
 class _BookHeaderWidget extends StatelessWidget {
   const _BookHeaderWidget({
     required this.book,
+    required this.isFavorite,
   }) : super(key: const Key('bookHeaderWidget'));
 
   final BookEntity book;
+  final bool isFavorite;
 
   @override
   Widget build(final BuildContext context) {
@@ -25,9 +27,8 @@ class _BookHeaderWidget extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            Icon(
-              Icons.favorite,
-              color: Theme.of(context).colorScheme.primary,
+            _FavoriteIconWidget(
+              isFavorite: isFavorite,
             ),
           ],
         ),
@@ -38,6 +39,29 @@ class _BookHeaderWidget extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
       ],
+    );
+  }
+}
+
+class _FavoriteIconWidget extends StatelessWidget {
+  const _FavoriteIconWidget({
+    required this.isFavorite,
+  }) : super(key: const Key('favoriteIconWidget'));
+
+  final bool isFavorite;
+
+  @override
+  Widget build(final BuildContext context) {
+    if (isFavorite) {
+      return Icon(
+        Icons.favorite,
+        color: Theme.of(context).colorScheme.primary,
+      );
+    }
+
+    return Icon(
+      Icons.favorite_border,
+      color: Theme.of(context).colorScheme.onBackground,
     );
   }
 }

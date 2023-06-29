@@ -5,8 +5,10 @@ class PrimaryLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    return CircularProgressIndicator(
-      color: Theme.of(context).colorScheme.primary,
+    return Center(
+      child: CircularProgressIndicator(
+        color: Theme.of(context).colorScheme.primary,
+      ),
     );
   }
 }

@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'components/app_bar/book_details_app_bar.dart';
 part 'components/book_contents_widget.dart';
 part 'components/header/book_header_widget.dart';
+part 'components/loaded_book_contents/loaded_book_contents_widget.dart';
 
 class BookDetailsScreen extends StatelessWidget {
   const BookDetailsScreen({
@@ -59,12 +60,9 @@ class _BookDetailsScreenBody extends StatelessWidget {
         ),
         Positioned.fill(
           top: screenSize.height * 0.4,
-          child: SizedBox(
-            width: screenSize.width,
-            child: _BookContentsWidget(
-              book: book,
-              presenter: presenter,
-            ),
+          child: _BookContentsWidget(
+            book: book,
+            presenter: presenter,
           ),
         ),
       ],

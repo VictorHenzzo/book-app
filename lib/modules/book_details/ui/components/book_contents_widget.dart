@@ -13,6 +13,7 @@ class _BookContentsWidget extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
+    //TODO Create size tokens
     return Container(
       padding: const EdgeInsets.only(
         left: 15,
@@ -25,30 +26,20 @@ class _BookContentsWidget extends StatelessWidget {
         ),
         color: Theme.of(context).colorScheme.surface,
       ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            _BookHeaderWidget(book: book),
-            //TODO Create size tokens
-            const SizedBox(height: 15),
-            BlocBuilder<BookDetailsBloc, BookDetailsState>(
-              builder: (final context, final state) {
-                return switch (state) {
-                  final BookDetailsInitialState _ => const PrimaryLoadingWidget(),
-                  final BookDetailsLoadingState _ => const PrimaryLoadingWidget(),
-                  final BookDetailsErrorState _ => DefaultErrorWidget(
-                      tryAgain: _fetchDescription,
-                    ),
-                  final BookDetailsLoadedState loadedState => Text(
-                      loadedState.bookDetails.description,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                };
-              },
-            ),
-            const SizedBox(height: 15),
-          ],
-        ),
+      child: BlocBuilder<BookDetailsBloc, BookDetailsState>(
+        builder: (final context, final state) {
+          return switch (state) {
+            final BookDetailsInitialState _ => const PrimaryLoadingWidget(),
+            final BookDetailsLoadingState _ => const PrimaryLoadingWidget(),
+            final BookDetailsErrorState _ => DefaultErrorWidget(
+                tryAgain: _fetchDescription,
+              ),
+            final BookDetailsLoadedState loadedState => _LoadedBookContentsWidget(
+                state: loadedState,
+                book: book,
+              ),
+          };
+        },
       ),
     );
   }
