@@ -1,7 +1,10 @@
 part of 'book_details_bloc.dart';
 
-sealed class BookDetailsState {
+sealed class BookDetailsState extends Equatable {
   const BookDetailsState();
+
+  @override
+  List<Object?> get props => [];
 }
 
 final class BookDetailsInitialState extends BookDetailsState {
@@ -22,4 +25,9 @@ final class BookDetailsLoadedState extends BookDetailsState {
   });
 
   final String bookDetails;
+
+  @override
+  List<Object?> get props => [
+        bookDetails,
+      ];
 }
