@@ -2,7 +2,7 @@ import 'package:book_app/core/data/models/author_model.dart';
 import 'package:book_app/core/domain/entities/author_entity.dart';
 import 'package:book_app/core/domain/repositories/author_repository.dart';
 import 'package:book_app/core/domain/use_cases/authors/fetch_favorite_authors_use_case.dart';
-import 'package:book_app/core/data/graph_ql/graph_ql_data_source.dart';
+import 'package:book_app/core/data/data_sources/graph_ql/graph_ql_data_source.dart';
 import 'package:book_app/core/infra/errors/app_error.dart';
 import 'package:graphql/client.dart';
 import 'package:injectable/injectable.dart';
