@@ -9,7 +9,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
     final unselectedItemColor = Theme.of(context).colorScheme.onSurface;
 
     return BottomNavigationBar(
-      items: items(),
+      items: _items(),
       type: BottomNavigationBarType.fixed,
       selectedItemColor: selectedItemColor,
       unselectedItemColor: unselectedItemColor,
@@ -22,7 +22,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
     );
   }
 
-  List<BottomNavigationBarItem> items() {
+  List<BottomNavigationBarItem> _items() {
     return const [
       BottomNavigationBarItem(
         icon: Icon(
