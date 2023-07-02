@@ -12,15 +12,12 @@ class BookBannerWidget extends StatelessWidget {
 
   final BookEntity book;
   final Function(BookEntity) onPressed;
-  //TODO Remove this
   final double heigth;
 
   @override
   Widget build(final BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final screenSize = MediaQuery.of(context).size;
-
-    // TODO Make all width equal
 
     return GestureDetector(
       onTap: () => onPressed(book),

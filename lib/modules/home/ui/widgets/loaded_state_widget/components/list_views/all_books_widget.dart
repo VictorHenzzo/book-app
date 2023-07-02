@@ -12,9 +12,7 @@ class _AllBooksWidget extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     return ListView.separated(
-      //TODO study shrinkWrap
       shrinkWrap: true,
-      //TODO Find better way to do this
       physics: const NeverScrollableScrollPhysics(),
       itemCount: allBooks.length,
       padding: const EdgeInsets.symmetric(

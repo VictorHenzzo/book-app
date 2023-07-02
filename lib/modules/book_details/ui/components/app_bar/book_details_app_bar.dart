@@ -6,7 +6,6 @@ class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
           key: const Key('bookDetailsAppBar'),
         );
 
-  //TODO Usar sliver pra dar uma animação interessante, colocar a foto aqui
   @override
   PreferredSizeWidget build(final BuildContext context) {
     final iconColor = Theme.of(context).colorScheme.surface;
@@ -28,7 +27,6 @@ class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  //TODO Fix this height
   @override
   Size get preferredSize => const Size.fromHeight(120);
 }

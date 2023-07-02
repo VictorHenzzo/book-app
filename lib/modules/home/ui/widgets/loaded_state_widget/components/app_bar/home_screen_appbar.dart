@@ -26,7 +26,6 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
         labelColor: Theme.of(context).colorScheme.onBackground,
         labelStyle: Theme.of(context).textTheme.titleMedium,
         isScrollable: true,
-        //TODO Fix the alignment
         tabAlignment: TabAlignment.start,
         indicator: UnderlineTabIndicator(
           borderSide: BorderSide(
@@ -73,7 +72,6 @@ class _AppBarTitle extends StatelessWidget {
           ),
         ),
         CircleAvatar(
-          //TODO It's breaking on lookup
           backgroundImage: NetworkImage(
             userImageUrl,
           ),
