@@ -7,7 +7,7 @@ import 'package:injectable/injectable.dart';
 
 @module
 abstract class BookModule {
-  BookRepository getAuthorRepository(
+  BookRepository getBookRepository(
     final BookRepositoryImpl repository,
   ) =>
       repository;

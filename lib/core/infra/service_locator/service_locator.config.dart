@@ -72,7 +72,7 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i9.AuthorRepository>(() =>
         authorsModule.getAuthorRepository(gh<_i6.AuthorRepositoryImpl>()));
     gh.factory<_i10.BookRepository>(
-        () => bookModule.getAuthorRepository(gh<_i7.BookRepositoryImpl>()));
+        () => bookModule.getBookRepository(gh<_i7.BookRepositoryImpl>()));
     gh.factory<_i11.FetchAllBooksUseCaseImpl>(
         () => _i11.FetchAllBooksUseCaseImpl(gh<_i10.BookRepository>()));
     gh.factory<_i12.FetchBookDetailsUseCaseImpl>(
