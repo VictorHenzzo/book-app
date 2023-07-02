@@ -1,16 +1,39 @@
-# book_app
+# Book App
 
-A new Flutter project.
+Book App is a Flutter application that allows users to manage their personal library of books and access information about various books. The app is designed to provide a seamless user experience and establish connections with a backend using GraphQL.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+**Step 1:**
 
-A few resources to get you started if this is your first Flutter project:
+Ensure that you have Flutter SDK installed on your development machine. You can download Flutter from the official Flutter website: https://flutter.dev.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The Flutter and Dart Versions used on this project are:
+Flutter Version: 3.10.4
+Dart Version: 3.0.3
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Make sure you have the specified versions of Flutter and Dart installed before running the app.
+
+**Step 2:**
+
+Clone the book-app repository from GitHub:
+
+```
+https://github.com/VictorHenzzo/book-app.git
+```
+
+**Step 3:**
+
+Install the project dependencies by running the following command in the project directory:
+
+```
+flutter pub get 
+```
+
+**Step 4:**
+
+Clone the book-app repository from GitHub:
+
+```
+flutter run
+```

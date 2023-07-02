@@ -26,7 +26,6 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
         labelColor: Theme.of(context).colorScheme.onBackground,
         labelStyle: Theme.of(context).textTheme.titleMedium,
         isScrollable: true,
-        tabAlignment: TabAlignment.start,
         indicator: UnderlineTabIndicator(
           borderSide: BorderSide(
             width: 4,
