@@ -25,6 +25,9 @@ class _LoadedBookContentsWidget extends StatelessWidget {
             state.bookDetails.description,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
+          const SizedBox(
+            height: Dimensions.small,
+          ),
         ],
       ),
     );

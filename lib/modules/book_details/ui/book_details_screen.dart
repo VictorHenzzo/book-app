@@ -2,6 +2,7 @@ import 'package:book_app/core/domain/entities/book_entity.dart';
 import 'package:book_app/modules/book_details/presentation/bloc/book_details_bloc.dart';
 import 'package:book_app/modules/book_details/presentation/book_details_presenter.dart';
 import 'package:book_app/theme/dimensions.dart';
+import 'package:book_app/widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:book_app/widgets/error/default_error_widget.dart';
 import 'package:book_app/widgets/loadings/primary_loading_widget.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class BookDetailsScreen extends StatelessWidget {
         presenter: presenter,
         book: book,
       ),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 }
