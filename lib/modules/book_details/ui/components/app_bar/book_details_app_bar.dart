@@ -11,10 +11,12 @@ class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
     final iconColor = Theme.of(context).colorScheme.surface;
 
     return AppBar(
-      backgroundColor: Colors.transparent,
       iconTheme: IconThemeData(
         color: iconColor,
       ),
+      backgroundColor: Colors.transparent,
+      scrolledUnderElevation: 0,
+      elevation: 0,
       actions: [
         IconButton(
           onPressed: () {},
@@ -28,5 +30,5 @@ class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(120);
+  Size get preferredSize => const Size.fromHeight(40);
 }
